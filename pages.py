@@ -63,7 +63,7 @@ class Results(Page):
 
 page_sequence = [
     #MyPage,
-    Introduccion,
+    #Introduccion,
     #Instrucciones_verbal,
     #Tarea_verbal,
     #Ranking_verbal,
