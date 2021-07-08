@@ -16,10 +16,12 @@ class Intrucciones_conteo(Page):
     pass
 
 class Prueba_verbal(Page):
-    pass
+    timer_text = 'Tiempo que le falta para completar la ronda: '
+    timeout_seconds = Constants.task_time_v_p
 
 class Prueba_conteo(Page):
-    pass
+    timer_text = 'Tiempo que le falta para completar la ronda: '
+    timeout_seconds = Constants.task_time_c_p
 
 class Tarea_verbal(Page):
     timer_text = 'Tiempo que le falta para completar la ronda: '

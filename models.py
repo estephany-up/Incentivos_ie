@@ -21,10 +21,12 @@ class Constants(BaseConstants):
     name_in_url = 'incentivos'
     players_per_group = None
     num_rounds = 1
-    task_time_v_s=180
-    task_time_v_p=120
-    task_time_c_s=300
-    task_time_c_p=180
+    task_time_v_p=60  #prueba verbal
+    task_time_v_s=180 #verbal sin presión
+    task_time_v_t=120 #verbal con presión
+    task_time_c_p=60  #prueba conteo
+    task_time_c_s=300 #conteo sin presión
+    task_time_c_t=180 #conteo con presión
 
 class Subsession(BaseSubsession):
     pass
