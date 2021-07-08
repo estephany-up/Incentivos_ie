@@ -1,6 +1,6 @@
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
-from .models import Constants
+from .models import Constants, Player
 
 
 class MyPage(Page):
@@ -24,16 +24,23 @@ class Prueba_conteo(Page):
     timeout_seconds = Constants.task_time_c_p
 
 class Tarea_verbal(Page):
-    timer_text = 'Tiempo que le falta para completar la ronda: '
-    #usar if para poner el tiempo dependiendo del grupo de tratamiento o control
-    # timeout_seconds = Constants.task_time_v_s
+    if Player.treatment=='C' or Player.treatment=='T1':
+        timer_text = 'Tiempo que le falta para completar la ronda: '
+        timeout_seconds = Constants.task_time_v_s
+    else:
+        timer_text = 'Tiempo que le falta para completar la ronda: '
+        timeout_seconds=Constants.task_time_v_t
 
     #def before_next_page(self):
     #   self.player.payoff = c(self.player.solved_tasks)
 
 class Tarea_conteo(Page):
-    timer_text = 'Tiempo que le falta para completar la ronda: '
-    #timeout_seconds = Constants.task_time_c_s
+    if Player.treatment=='C' or Player.treatment=='T1':
+        timer_text = 'Tiempo que le falta para completar la ronda: '
+        timeout_seconds = Constants.task_time_c_s
+    else:
+        timer_text = 'Tiempo que le falta para completar la ronda: '
+        timeout_seconds=Constants.task_time_c_t
     #def before_next_page(self):
     #   self.player.payoff = c(self.player.solved_tasks)
 
