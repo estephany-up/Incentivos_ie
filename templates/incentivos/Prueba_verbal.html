@@ -1,5 +1,5 @@
-{{ block title }}Prueba de Tarea Verbal{{ endblock }}
-{{ block content }}
+{% block title %}Prueba de Tarea Verbal{% endblock %}
+{% block content %}
 <div class="instructions well well-lg">
 
     <p>
@@ -13,11 +13,11 @@
         Escriba las posibles sub-palabras en el siguiente cuadro:
     </p>
 
-    {{formfields}}
+    {%formfields%}
 
     <p>
         *Recuerde que las palabras deben ser ingresadas entre comas y con las tildes respectivas.
     </p>
 </div>
-{{ next_button }}
-{{ endblock }}
+{% next_button %}
+{% endblock %}

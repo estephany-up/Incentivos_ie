@@ -62,14 +62,15 @@ class Results(Page):
 
 
 page_sequence = [
-    MyPage,
+    #MyPage,
     Introduccion,
-    Instrucciones_verbal,
-    Tarea_verbal,
-    Ranking_verbal,
-    Intrucciones_conteo,
-    Tarea_conteo, 
-    Ranking_conteo,
+    #Instrucciones_verbal,
+    #Tarea_verbal,
+    #Ranking_verbal,
+    #Intrucciones_conteo,
+    #Tarea_conteo, 
+    #Ranking_conteo,
     Encuesta_final,
-    ResultsWaitPage, 
-    Results]
+    #ResultsWaitPage, 
+    #Results,
+]

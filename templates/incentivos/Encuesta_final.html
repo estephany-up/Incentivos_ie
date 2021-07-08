@@ -1,5 +1,5 @@
-{{ block title }}Encuesta Final{{ endblock }}
-{{ block content }}
+{% block title %}Encuesta Final{% endblock %}
+{% block content %}
 <div class="instructions well well-lg">
 
     <p>
@@ -8,21 +8,17 @@
         ¡ya que su respuesta puede ayudarnos enormemente!             
     </p>
     
-    {{formfields}}
+    {%formfields%}
 
     <p>
         8. Lea cada enunciado con atención y seleccione la opción verdadera para usted.
     </p>
-    <table class="table">
-        {{ for field in form }}
-            <tr>
-                <th>{{ field.label }}</th>
-                {{ for choice in field }}
-                    <td>{{ choice }}</td>
-                {{ endfor }}
-            </tr>
-        {{ endfor }}
-    </table>
+    <tr>
+        <td>{{ form.offer_1.label }}</td>
+        {% for choice in form.offer_1 %}
+            <td>{{ choice }}</td>
+        {% endfor %}
+    </tr>
 
     <p>
         9. Lea con atención cada enunciado y seleccione la opción verdadera para usted.
@@ -33,5 +29,4 @@
     </p>
 
 </div>
-{{ next_button }}
-{{ endblock }}
+{% endblock %}

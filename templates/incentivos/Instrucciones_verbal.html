@@ -1,4 +1,4 @@
-{{ block content }}
+{% block content %}
 <div class="instructions well well-lg">
 
     <h3>
@@ -33,7 +33,7 @@
         como respuestas; por lo tanto, se obtendrá un puntaje de cero. Por último, por cada sub-palabra 
         correcta se obtendrá un punto.
     </p>
-    {{if player.treatment == 'C'}}
+    {%if player.treatment == 'C'%}
     <p>
         Se realizarán cuatro rondas de tres minutos cada una, en las que deberás 
         resolver la tarea descrita anteriormente. Al finalizar cada ronda, se 
@@ -43,7 +43,7 @@
         en una misma ronda. Por otro lado, se dará un minuto de prueba para que 
         pueda familiarizarse con la tarea antes de realizar las cuatro rondas.
     </p>
-    {{elif player.treatment == 'T1'}}
+    {%elif player.treatment == 'T1'%}
     <p>
         Se realizarán cuatro rondas de tres minutos cada una, en las que deberás 
         resolver la tarea descrita anteriormente. Al finalizar cada ronda, se 
@@ -62,7 +62,7 @@
         lugar, no recibirás nada en esa ronda. Por lo tanto, a mayor cantidad de rondas 
         ganadas, mayor posibilidad de ganar más dinero. 
     </p>
-    {{elif player.treatment == 'T2'}}
+    {%elif player.treatment == 'T2'%}
     <p>
         Se realizarán cuatro rondas de dos minutos cada una, en las que deberás resolver 
         la tarea descrita anteriormente. Al finalizar cada ronda, se presentará en tu pantalla 
@@ -71,7 +71,7 @@
         la misma palabra en una misma ronda. Por otro lado, se dará un minuto de prueba para que 
         pueda familiarizarse con la tarea antes de realizar las cuatro rondas.
     </p>
-    {{else}}
+    {%else%}
     <p>
         Se realizarán cuatro rondas de dos minutos cada una, en las que deberás resolver la tarea 
         descrita anteriormente. Al finalizar cada ronda, se presentará en tu pantalla un ranking 
@@ -88,8 +88,8 @@
         lugar, no recibirás nada en esa ronda. Por lo tanto, a mayor cantidad de rondas ganadas, mayor 
         posibilidad de ganar más dinero.
     </p>
-    {{endif}}
+    {%endif%}
 
 </div>
-{{ next_button }}
-{{ endblock }}
+    {% next_button %}
+{% endblock %}
