@@ -1,0 +1,95 @@
+{{ block content }}
+<div class="instructions well well-lg">
+
+    <h3>
+        Tarea verbal - Instrucciones
+    </h3>
+    <p>
+        En esta tarea, tendrás que resolver el juego “Rompecabezas de palabras en 
+        palabras”, el cual se explicará a continuación. Se presentará en tu pantalla 
+        una palabra. A partir de las letras que compongan esta palabra, se deberá formar 
+        sub-palabras de mínimo cuatro letras. Por ejemplo, de la palabra A-L-E-A-T-O-R-I-O 
+        se puede obtener las siguientes sub-palabras: rata, óleo, roto, rota, tarea, litera, lotería, etc. 
+             
+    </p>
+    <p>
+        En el caso de que la palabra general tenga vocales con tildes, al momento de formar 
+        las sub-palabras, estas pueden considerarse como si no tuvieran tildes, o viceversa. 
+        En el ejemplo anterior, se tenía la palabra A-L-E-A-T-O-R-I-O, con la cual se formó 
+        la sub-palabra lotería. En este caso la palabra base no contenía la vocal "i" con tilde; 
+        sin embargo, al formar la sub-palabra, se consideró la vocal "i" con tilde, lo que se 
+        consideraría como una respuesta correcta. 
+    </p>
+    <p>
+        Adicionalmente, se aceptan palabras en singular y en plural. Sin embargo, no se aceptan nombres propios.
+    </p>
+    <p>
+        Cabe resaltar que las posibles sub-palabras deberán ser ingresadas en el cuadro de respuestas 
+        de la siguiente manera: 
+        ###PONER IMAGEN###
+    </p>
+    <p>
+        Las sub-palabras se deberán encontrar entre comas. En caso contrario, no se considerarán 
+        como respuestas; por lo tanto, se obtendrá un puntaje de cero. Por último, por cada sub-palabra 
+        correcta se obtendrá un punto.
+    </p>
+    {{if player.treatment == 'C'}}
+    <p>
+        Se realizarán cuatro rondas de tres minutos cada una, en las que deberás 
+        resolver la tarea descrita anteriormente. Al finalizar cada ronda, se 
+        presentará en tu pantalla un ranking con los puntajes obtenidos por los 
+        participantes de tu grupo en esa ronda. Esta comparación de puntajes es 
+        posible porque a cada participante del grupo se le asigna la misma palabra 
+        en una misma ronda. Por otro lado, se dará un minuto de prueba para que 
+        pueda familiarizarse con la tarea antes de realizar las cuatro rondas.
+    </p>
+    {{elif player.treatment == 'T1'}}
+    <p>
+        Se realizarán cuatro rondas de tres minutos cada una, en las que deberás 
+        resolver la tarea descrita anteriormente. Al finalizar cada ronda, se 
+        presentará en tu pantalla un ranking con los puntajes obtenidos por los 
+        participantes de tu grupo en esa ronda. Esta comparación de puntajes es 
+        posible porque a cada participante del grupo se le asigna la misma palabra 
+        en una misma ronda. Por otro lado, se dará un minuto de prueba para que pueda 
+        familiarizarse con la tarea antes de realizar las cuatro rondas. 
+    </p>
+    <p>
+        Por último, tendrás la oportunidad de recibir dinero real si logras obtener 
+        el mayor puntaje en el ranking. El participante que obtenga el mayor puntaje, 
+        recibirá 0.20 céntimos por punto obtenido en cada ronda. Es decir, si eres el 
+        participante que se encuentra primero en el ranking en la ronda 1 con 14 puntos, 
+        recibirás de pago 2.80 soles. En el caso de que en la ronda 2 no ocupes el primer 
+        lugar, no recibirás nada en esa ronda. Por lo tanto, a mayor cantidad de rondas 
+        ganadas, mayor posibilidad de ganar más dinero. 
+    </p>
+    {{elif player.treatment == 'T2'}}
+    <p>
+        Se realizarán cuatro rondas de dos minutos cada una, en las que deberás resolver 
+        la tarea descrita anteriormente. Al finalizar cada ronda, se presentará en tu pantalla 
+        un ranking con los puntajes obtenidos por los participantes de tu grupo en esa ronda. 
+        Esta comparación de puntajes es posible porque a cada participante del grupo se le asigna 
+        la misma palabra en una misma ronda. Por otro lado, se dará un minuto de prueba para que 
+        pueda familiarizarse con la tarea antes de realizar las cuatro rondas.
+    </p>
+    {{else}}
+    <p>
+        Se realizarán cuatro rondas de dos minutos cada una, en las que deberás resolver la tarea 
+        descrita anteriormente. Al finalizar cada ronda, se presentará en tu pantalla un ranking 
+        con los puntajes obtenidos por los participantes de tu grupo en esa ronda. Esta comparación 
+        de puntajes es posible porque a cada participante del grupo se le asigna la misma palabra en 
+        una misma ronda. Por otro lado, se dará un minuto de prueba para que pueda familiarizarse con 
+        la tarea antes de realizar las cuatro rondas.
+    </p>
+    <p>
+        Por último, tendrás la oportunidad de recibir dinero real si logras obtener el mayor puntaje en 
+        el ranking. El participante que obtenga el mayor puntaje, recibirá 0.20 céntimos por punto obtenido 
+        en cada ronda. Es decir, si eres el participante que se encuentra primero en el ranking en la ronda 
+        1 con 14 puntos, recibirás de pago 2.80 soles. En el caso de que en la ronda 2 no ocupes el primer 
+        lugar, no recibirás nada en esa ronda. Por lo tanto, a mayor cantidad de rondas ganadas, mayor 
+        posibilidad de ganar más dinero.
+    </p>
+    {{endif}}
+
+</div>
+{{ next_button }}
+{{ endblock }}

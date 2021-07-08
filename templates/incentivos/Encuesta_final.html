@@ -1,0 +1,37 @@
+{{ block title }}Encuesta Final{{ endblock }}
+{{ block content }}
+<div class="instructions well well-lg">
+
+    <p>
+        En esta sección, le pedimos que complete el siguiente cuestionario. 
+        Por favor, responda de la manera más honesta y completa que pueda, 
+        ¡ya que su respuesta puede ayudarnos enormemente!             
+    </p>
+    
+    {{formfields}}
+
+    <p>
+        8. Lea cada enunciado con atención y seleccione la opción verdadera para usted.
+    </p>
+    <table class="table">
+        {{ for field in form }}
+            <tr>
+                <th>{{ field.label }}</th>
+                {{ for choice in field }}
+                    <td>{{ choice }}</td>
+                {{ endfor }}
+            </tr>
+        {{ endfor }}
+    </table>
+
+    <p>
+        9. Lea con atención cada enunciado y seleccione la opción verdadera para usted.
+    </p>
+
+    <p>
+        ¡Muchas gracias por tu participación en este experimento!
+    </p>
+
+</div>
+{{ next_button }}
+{{ endblock }}
