@@ -36,7 +36,7 @@ class Group(BaseGroup):
 
 def make_field(label):
     return models.IntegerField(
-        choices=[[1,'Totalmente de acuerdo'],[2,'De acuerdo'],[3,'En desacuerdo'],[4,'Totalmente en desacuerdo']],
+        choices=[[1,''],[2,''],[3,''],[4,'']],
         label=label,
         widget=widgets.RadioSelect,
     )
@@ -86,10 +86,6 @@ class Player(BasePlayer):
     ##enunciados adicionales para tratameinto 1 y 3
     q19 = make_field('Los incentivos monetarios ofrecidos coinciden con mi esfuerzo en las tareas realizadas')
     q20 = make_field('El incentivo monetario ofrecido no está a la altura de mis expectativas')
-
-    ##PARA PROBAR QUE LA TABLA DE LA ENCUESTA FUNCIONA
-    offer_1 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3], label='"How much do you want to contribute?"')
-    offer_2 = models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3], label='"How much do you want to contribute?"')
     
 
     treatment = models.StringField()

@@ -8,22 +8,77 @@
         ¡ya que su respuesta puede ayudarnos enormemente!             
     </p>
     
-    {% formfields %}
+
 
     <p>
         8. Lea cada enunciado con atención y seleccione la opción verdadera para usted.
     </p>
-    <tr>
-        <td>{{ form.offer_1.label }}</td>
-        {% for choice in form.offer_1 %}
-            <td>{{ choice }}</td>
-        {% endfor %}
-    </tr>
+    <table class="table" frame="void" style="width:100%; ">
 
+        <tr >
+        
+        <th></th>
+        <th> <div>Totalmente de acuerdo</div> 1 </th>
+        <th> <div>De acuerdo</div> 2 </th>
+        <th> <div>En desacuerdo</div> 3 </th>
+        <th> <div>Totalmente en desacuerdo</div> 4 </th>
+        
+        </tr>
+        
+        {% for field in form %}
+        {% if  forloop.counter > 6 & forloop-counter <= 21%} 
+        <tr>
+
+        <td align="left" style="min-width:40px">{{ field.label }}</td>
+
+        {% for choice in field %}
+        <td align="center" >{{ choice }}</td>
+        {% endfor %}
+
+        </tr>
+
+        {% endif %}
+        {% endfor %}
+        </table>
+        
+        <style>
+        tr:nth-child(even) {background-color: #f9f9f9;}
+        th {
+        text-align:center;
+        width: 10%;
+        }
+        input[type="radio"]{margin-left:-5.5px}
+        </style>
     <p>
         9. Lea con atención cada enunciado y seleccione la opción verdadera para usted.
     </p>
+    <table class="table" frame="void" style="width:100%; ">
 
+        <tr >
+        
+        <th></th>
+        <th> <div>Totalmente de acuerdo</div> 1 </th>
+        <th> <div>De acuerdo</div> 2 </th>
+        <th> <div>En desacuerdo</div> 3 </th>
+        <th> <div>Totalmente en desacuerdo</div> 4 </th>
+        
+        </tr>
+        
+        {% for field in form %}
+        {% if  forloop.counter > 20 %} 
+        <tr>
+
+        <td align="left" style="min-width:40px">{{ field.label }}</td>
+
+        {% for choice in field %}
+        <td align="center" >{{ choice }}</td>
+        {% endfor %}
+
+        </tr>
+
+        {% endif %}
+        {% endfor %}
+        </table>
     <p>
         ¡Muchas gracias por tu participación en este experimento!
     </p>
