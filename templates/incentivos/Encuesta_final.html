@@ -1,3 +1,5 @@
+{% extends "global/Page.html" %}
+{% load otree %}
 {% block title %}Encuesta Final{% endblock %}
 {% block content %}
 <div class="instructions well well-lg">
@@ -8,7 +10,13 @@
         ¡ya que su respuesta puede ayudarnos enormemente!             
     </p>
     
-
+    {% formfield 'num_ID' %}
+    {% formfield 'gender' %}
+    {% formfield 'age' %}
+    {% formfield 'career' %}
+    {% formfield 'ciclo' %}
+    {% formfield 'escala' %}
+    {% formfield 'exp' %}
 
     <p>
         8. Lea cada enunciado con atención y seleccione la opción verdadera para usted.
@@ -26,7 +34,7 @@
         </tr>
         
         {% for field in form %}
-        {% if  forloop.counter > 6 & forloop-counter <= 21%} 
+        {% if forloop.counter > 6 and forloop.counter < 21%} 
         <tr>
 
         <td align="left" style="min-width:40px">{{ field.label }}</td>

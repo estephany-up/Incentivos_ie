@@ -55,7 +55,7 @@ class Ranking_conteo(Page):
 
 class Encuesta_final(Page):
     form_model='player'
-    form_fields=['gender','age','career','ciclo','escala','exp',
+    form_fields=['num_ID','gender','age','career','ciclo','escala','exp',
     'q1','q2','q3','q4','q5','q6','q7','q8','q9','q10',
     'q11','q12','q13','q14','q15','q16','q17','q18','q19','q20',]
 
@@ -78,7 +78,7 @@ class Results(Page):
 
 page_sequence = [
     #MyPage,
-    #Introduccion,
+    Introduccion,
     #Instrucciones_verbal,
     #Tarea_verbal,
     #Ranking_verbal,
