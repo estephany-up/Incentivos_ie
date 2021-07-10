@@ -57,7 +57,7 @@ class Player(BasePlayer):
         label='4. ¿Cuál es la carrera que estudias? Seleccione su carrera',
         widget=widgets.RadioSelect,
     )
-    ciclo = models.IntegerField(label='5. ¿Qué ciclo estás cursando actualmente?')
+    ciclo = models.IntegerField(label='5. ¿Qué ciclo estás cursando actualmente? (Ej:5to)')
     escala = models.StringField(label='6. ¿En qué escala de pensión te encuentras?')
     exp = models.StringField(
         choices=[[0,'No'],[1,'Sí, una vez'],[2,'Sí, más de una vez']],
