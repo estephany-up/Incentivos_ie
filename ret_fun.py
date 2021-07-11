@@ -1,5 +1,7 @@
 import random
 from random import randint
+from django.utils.safestring import mark_safe
+from django.template.loader import render_to_string
 from string import digits, ascii_lowercase
 import logging
 
@@ -9,7 +11,27 @@ logger = logging.getLogger(__name__)
 def chunkify(lst, n):
     return [lst[i::n] for i in range(n)]
 
-class CountZeroes:
+class TaskGenerator:
+    path_to_render = None
+    def __init__(self, **kwargs):
+        self.body = self.get_body(**kwargs)
+        self.correct_answer = self.get_correct_answer()
+        self.html_body = self.get_html_body()
+        logger.info(f'Correct answer: {self.correct_answer}')
+
+    def get_context_for_body(self):
+        return {}
+
+    def get_html_body(self):
+        return mark_safe(render_to_string(self.path_to_render, self.get_context_for_body()))
+
+    def get_body(self, **kwargs):
+        pass
+
+    def get_correct_answer(self):
+        pass
+
+class CountZeroes(TaskGenerator):
     path_to_render = 'incentivos/count.html'
     name = 'Count 0s in the matrix of digits'
     def get_correct_answer(self):

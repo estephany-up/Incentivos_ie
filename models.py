@@ -1,3 +1,4 @@
+from django.db.models.base import Model
 from otree.api import (
     models,
     widgets,
@@ -10,6 +11,8 @@ from otree.api import (
 )
 
 import random
+from . import ret_fun
+from django.db.models import F
 
 author = 'Estephany y Yadira'
 
@@ -29,7 +32,25 @@ class Constants(BaseConstants):
     task_time_c_t=180 #conteo con presión
 
 class Subsession(BaseSubsession):
-    pass
+    ##por ahora sólo se ha asignado tratamiento por participante
+    ##cambiar más adelante a grupos
+    def creating_session(self):
+     #randomize to treatments
+        for player in self.get_players():
+            player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
+            print('Treatment:', player.treatment)
+    
+    # we look for a corresponding Task Generator in our library (ret_functions.py) that contain all task-generating
+    # functions. So the name of the generator in 'task_fun' parameter from settings.py should coincide with an
+    # actual task-generating class from ret_functions.
+        self.session.vars['task_fun'] = getattr(ret_fun, self.session.config['task'])
+    # If a task generator gets some parameters (like a level of difficulty, or number of rows in a matrix etc.)
+    # these parameters should be set in 'task_params' settings of an app, in a form of dictionary. For instance:
+    # 'task_params': {'difficulty': 5}
+        self.session.vars['task_params'] = self.session.config.get('task_params', {})
+    # for each player we call a function (defined in Player's model) called get_or_create_task
+    # this is done so that when a RET page is shown to a player for the first time they would already have a task
+    # to work on
 
 class Group(BaseGroup):
     pass
@@ -90,10 +111,14 @@ class Player(BasePlayer):
 
     treatment = models.StringField()
 
-##por ahora sólo se ha asignado tratamiento por participante
-##cambiar más adelante a grupos
-def creating_session(subsession:Subsession):
-     #randomize to treatments
-        for player in subsession.get_players():
-            player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
-            print('Treatment:', player.treatment)
+    # this method returns number of correct tasks solved in this round
+    @property
+    def num_tasks_correct(self):
+        return self.tasks.filter(correct_answer=F('answer')).count()
+
+    # this method returns total number of tasks to which a player provided an answer
+    @property
+    def num_tasks_total(self):
+        return self.tasks.filter(answer__isnull=False).count()
+
+    solved_tasks = num_tasks_correct

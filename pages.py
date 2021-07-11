@@ -43,7 +43,7 @@ class Tarea_conteo(Page):
     else:
         timer_text = 'Tiempo que le falta para completar la ronda: '
         timeout_seconds=Constants.task_time_c_t
-    
+   
     #def before_next_page(self):
     #   self.player.payoff = c(self.player.solved_tasks)
 
@@ -75,6 +75,8 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     pass
 
+class count(Page):
+    pass
 
 page_sequence = [
     #MyPage,
@@ -83,7 +85,7 @@ page_sequence = [
     #Tarea_verbal,
     #Ranking_verbal,
     #Intrucciones_conteo,
-    #Tarea_conteo, 
+    Tarea_conteo, 
     #Ranking_conteo,
     Encuesta_final,
     #ResultsWaitPage, 

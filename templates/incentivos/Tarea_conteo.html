@@ -9,7 +9,7 @@
 
     <!--The next line adds the task specific content, getting 	the file name through the get_or_create_task function.-->
 
-    <div class="task-container">	{{ player.get_or_create_task.html_body|safe }}</div>
+    <div class="task-container"></div>
 
     <div>Your answer is:</div>
     <input type="text" id="answer" class="offer" 	style="background-color: white" required>
@@ -33,7 +33,7 @@
 
         });
     </script>
-    {% include 'realefforttask/includes/js_work_page.html' %}
+    {% include 'incentivos/js_wp.html' %}
 {% endblock %}
 
 
