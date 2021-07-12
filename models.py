@@ -147,7 +147,7 @@ class Task(djmodels.Model):
     class Meta:
         ordering = ['-created_at']
 
-    player = djmodels.ForeignKey(to=Meta, on_delete=djmodels.CASCADE, related_name='tasks')
+    player = djmodels.ForeignKey(to=Player, on_delete=djmodels.CASCADE, related_name='tasks')
     body = models.LongStringField()
     html_body = models.LongStringField()
     correct_answer = models.StringField()
