@@ -122,3 +122,49 @@ class Player(BasePlayer):
         return self.tasks.filter(answer__isnull=False).count()
 
     solved_tasks = num_tasks_correct
+
+## Necesita de TASK (esto está abajo)
+    def get_or_create_task(self):
+        unfinished_tasks = self.tasks.filter(answer__isnull=True)
+        if unfinished_tasks.exists():
+            return unfinished_tasks.first()
+        else:
+            task = Task.create(self, self.session.vars['task_fun'], **self.session.vars['task_params'])
+            task.save()
+            return task
+
+
+##DJANGO##
+from django.db import models as djmodels
+
+# This is a custom model that contains information about individual tasks. In each round, each player can have as many
+# tasks as they tried to solve (we can call for the set of all tasks solved by a player by calling for instance
+# player.tasks.all()
+# Each task has a body field, html_body - actual html code shown at each page, correct answer and an answer provided by
+# a player. In addition there are two automatically updated/created fields that track time of creation and of an update
+# These fields can be used to track how long each player works on each task
+class Task(djmodels.Model):
+    class Meta:
+        ordering = ['-created_at']
+
+    player = djmodels.ForeignKey(to=Meta, on_delete=djmodels.CASCADE, related_name='tasks')
+    body = models.LongStringField()
+    html_body = models.LongStringField()
+    correct_answer = models.StringField()
+    answer = models.StringField(null=True)
+    created_at = djmodels.DateTimeField(auto_now_add=True)
+    updated_at = djmodels.DateTimeField(auto_now=True)
+    task_name = models.StringField()
+    # the following method creates a new task, and requires as an input a task-generating function and (if any) some
+    # parameters fed into task-generating function.
+    @classmethod
+    def create(cls, player, fun, **params):
+        proto_task = fun(**params)
+        task = cls(player=player,
+                   body=proto_task.body,
+                   html_body=proto_task.html_body,
+                   correct_answer=proto_task.correct_answer,
+                   task_name = proto_task.name)
+        return task
+    
+    
