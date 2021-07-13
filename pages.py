@@ -44,6 +44,9 @@ class Tarea_conteo(Page):
         timer_text = 'Tiempo que le falta para completar la ronda: '
         timeout_seconds=Constants.task_time_c_t
     
+    form_model='player'
+    form_fields=['rpta_c']
+    
     def vars_for_template(self):
 #        lst = [1,2,3,4,5,6,7,8,9,10]
 #        for i in range (1,10):

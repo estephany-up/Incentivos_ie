@@ -98,6 +98,7 @@ class Player(BasePlayer):
 
     treatment = models.StringField()
 
+    rpta_c = models.IntegerField()
 #class Task:
 #    a_1 = models.StringField()
 #    a_2 = models.StringField()
