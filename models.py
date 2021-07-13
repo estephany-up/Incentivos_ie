@@ -29,8 +29,6 @@ class Constants(BaseConstants):
     task_time_c_p=60  #prueba conteo
     task_time_c_s=300 #conteo sin presión
     task_time_c_t=180 #conteo con presión
-    selection_set = ['0','1']
-    lst = ['1','2','3','4','5','6','7','8','9','10']
 
 class Subsession(BaseSubsession):
     ##por ahora sólo se ha asignado tratamiento por participante
@@ -100,17 +98,17 @@ class Player(BasePlayer):
 
     treatment = models.StringField()
 
-class Task:
-    a_1 = models.StringField()
-    a_2 = models.StringField()
-    a_3 = models.StringField()
-    a_4 = models.StringField()
-    a_5 = models.StringField()
-    
-    def get_body(self, **kwargs):
-        selection_set = kwargs.get('selection_set', [0, 1])
-        for i in range (1,5):
-            a_i = str(random.choice(selection_set))
+#class Task:
+#    a_1 = models.StringField()
+#    a_2 = models.StringField()
+#    a_3 = models.StringField()
+#    a_4 = models.StringField()
+#    a_5 = models.StringField()
+#    
+#    def get_body(self, **kwargs):
+#        selection_set = kwargs.get('selection_set', [0, 1])
+#        for i in range (1,5):
+#            a_i = str(random.choice(selection_set))
 
 
 
