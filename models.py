@@ -101,6 +101,17 @@ class Player(BasePlayer):
     treatment = models.StringField()
 
 class Task:
-    pass
+    a_1 = models.StringField()
+    a_2 = models.StringField()
+    a_3 = models.StringField()
+    a_4 = models.StringField()
+    a_5 = models.StringField()
+    
+    def get_body(self, **kwargs):
+        selection_set = kwargs.get('selection_set', [0, 1])
+        for i in range (1,5):
+            a_i = str(random.choice(selection_set))
+
+
 
     

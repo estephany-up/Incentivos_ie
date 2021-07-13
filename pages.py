@@ -45,7 +45,6 @@ class Tarea_conteo(Page):
         timeout_seconds=Constants.task_time_c_t
     
     def vars_for_template(self):
-        Constants = self.constants
         for i in range (1,5):
             a_i = random.choice([Constants.selection_set]) 
     
