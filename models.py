@@ -11,8 +11,7 @@ from otree.api import (
 )
 
 import random
-from . import ret_fun
-from django.db.models import F
+
 
 author = 'Estephany y Yadira'
 
@@ -30,6 +29,8 @@ class Constants(BaseConstants):
     task_time_c_p=60  #prueba conteo
     task_time_c_s=300 #conteo sin presión
     task_time_c_t=180 #conteo con presión
+    selection_set = ['0','1']
+    lst = ['1','2','3','4','5','6','7','8','9','10']
 
 class Subsession(BaseSubsession):
     ##por ahora sólo se ha asignado tratamiento por participante
@@ -40,18 +41,6 @@ class Subsession(BaseSubsession):
             player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
             print('Treatment:', player.treatment)
     
-    # we look for a corresponding Task Generator in our library (ret_functions.py) that contain all task-generating
-    # functions. So the name of the generator in 'task_fun' parameter from settings.py should coincide with an
-    # actual task-generating class from ret_functions.
-        self.session.vars['task_fun'] = getattr(ret_fun, self.session.config['task'])
-    # If a task generator gets some parameters (like a level of difficulty, or number of rows in a matrix etc.)
-    # these parameters should be set in 'task_params' settings of an app, in a form of dictionary. For instance:
-    # 'task_params': {'difficulty': 5}
-        self.session.vars['task_params'] = self.session.config.get('task_params', {})
-    # for each player we call a function (defined in Player's model) called get_or_create_task
-    # this is done so that when a RET page is shown to a player for the first time they would already have a task
-    # to work on
-
 class Group(BaseGroup):
     pass
 
@@ -111,60 +100,7 @@ class Player(BasePlayer):
 
     treatment = models.StringField()
 
-    # this method returns number of correct tasks solved in this round
-    @property
-    def num_tasks_correct(self):
-        return self.tasks.filter(correct_answer=F('answer')).count()
+class Task:
+    pass
 
-    # this method returns total number of tasks to which a player provided an answer
-    @property
-    def num_tasks_total(self):
-        return self.tasks.filter(answer__isnull=False).count()
-
-    solved_tasks = num_tasks_correct
-
-## Necesita de TASK (esto está abajo)
-    def get_or_create_task(self):
-        unfinished_tasks = self.tasks.filter(answer__isnull=True)
-        if unfinished_tasks.exists():
-            return unfinished_tasks.first()
-        else:
-            task = Task.create(self, self.session.vars['task_fun'], **self.session.vars['task_params'])
-            task.save()
-            return task
-
-
-##DJANGO##
-from django.db import models as djmodels
-
-# This is a custom model that contains information about individual tasks. In each round, each player can have as many
-# tasks as they tried to solve (we can call for the set of all tasks solved by a player by calling for instance
-# player.tasks.all()
-# Each task has a body field, html_body - actual html code shown at each page, correct answer and an answer provided by
-# a player. In addition there are two automatically updated/created fields that track time of creation and of an update
-# These fields can be used to track how long each player works on each task
-class Task(djmodels.Model):
-    class Meta:
-        ordering = ['-created_at']
-
-    player = djmodels.ForeignKey(to=Player, on_delete=djmodels.CASCADE, related_name='tasks')
-    body = models.LongStringField()
-    html_body = models.LongStringField()
-    correct_answer = models.StringField()
-    answer = models.StringField(null=True)
-    created_at = djmodels.DateTimeField(auto_now_add=True)
-    updated_at = djmodels.DateTimeField(auto_now=True)
-    task_name = models.StringField()
-    # the following method creates a new task, and requires as an input a task-generating function and (if any) some
-    # parameters fed into task-generating function.
-    @classmethod
-    def create(cls, player, fun, **params):
-        proto_task = fun(**params)
-        task = cls(player=player,
-                   body=proto_task.body,
-                   html_body=proto_task.html_body,
-                   correct_answer=proto_task.correct_answer,
-                   task_name = proto_task.name)
-        return task
-    
     

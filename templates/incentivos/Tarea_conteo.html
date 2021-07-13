@@ -6,95 +6,139 @@
 {% endblock %}
 
 {% block content %}
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:6px 10px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:6px 10px;word-break:normal;}
+  .tg .tg-nrix{text-align:center;vertical-align:middle}
+  </style>
+  <table class="tg">
+  <thead>
+    <tr>
+      <td class="tg-nrix">{{ a_1 }}</td>
+      <td class="tg-nrix">{{ a_2 }}</td>
+      <td class="tg-nrix">{{ a_3 }}</td>
+      <td class="tg-nrix">{{ a_4 }}</td>
+      <td class="tg-nrix">{{ a_5 }}</td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+    <tr>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+      <td class="tg-nrix"></td>
+    </tr>
+  </tbody>
+  </table>
 
-    <!--The next line adds the task specific content, getting 	the file name through the get_or_create_task function.-->
-
-    <div class="task-container">	{{ player.get_or_create_task.html_body|safe }}</div>
-
-    <div>Your answer is:</div>
-    <input type="text" id="answer" class="offer" 	style="background-color: white" required>
-    <button class="answer btn btn-outline-dark" type="button" 	data-feedback="false">Answer</button>
-
- <!--   <p> Tasks attempted so far: <span id="num_tasks_total">{{ player.num_tasks_total }}</span></p>
-    <p> Tasks correct so far: <span id="num_tasks_correct"> {{ player.num_tasks_correct }}</span></p> -->
-
-{% endblock %}
-
-{% block scripts %}
-    <script>
-        $(function () {
-            $(window).keydown(function (event) {
-                if (event.keyCode == 13) {
-                    event.preventDefault();
-                    return false;
-                }
-            });
-
-
-        });
-    </script>
-    {% include 'incentivos/js_wp.html' %}
-{% endblock %}
-
-
-{% block styles %}
-    <style type="text/css">
-        .otree-title {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 0 10px 0;
-            padding: 20px;
-        }
-
-        .otree-timer {
-            display: none;
-        }
-
-        .otree-body {
-            text-indent: each-line;
-        }
-
-        .box-heading {
-            background-color: steelblue;
-            color: white;
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 24px;
-        }
-
-        .table-style {
-            color: black;
-            margin: 10px 10px 10px 10px;
-        }
-
-        .table-borders {
-            border: solid;
-            border: steelblue;
-            background-color: #ecf2f9;
-            align-content: center;
-
-        }
-
-        .offer {
-            background-color: whitesmoke;
-            color: navy;
-            padding: 1px 10px 1px 10px;
-            border: groove;
-            border-color: lightsteelblue;
-            font-weight: bold;
-            margin: 1px;
-        }
-
-        .otree-btn-next {
-            background-color: steelblue;
-            color: white;
-            padding: 5px 10px 5px 10px;
-
-        }
-
-        h2, h3, h4, h5, h6 {
-            font-weight: bolder;
-            color: #24435c;
-        }
-
-    </style>
 {% endblock %}
