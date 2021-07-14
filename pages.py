@@ -1,7 +1,7 @@
 from otree.api import Currency as c, currency_range
 from otree.db.models import StringField
 from ._builtin import Page, WaitPage
-from .models import Constants, Player
+from .models import Constants, Player, Task
 
 import random
 
@@ -46,8 +46,9 @@ class Tarea_conteo(Page):
     
     form_model='player'
     form_fields=['rpta_c']
-    
+
     def vars_for_template(self):
+        lst = Task.lst
 #        lst = [1,2,3,4,5,6,7,8,9,10]
 #        for i in range (1,10):
         a_1 = str(random.choice([0,1]))
@@ -151,7 +152,7 @@ class Tarea_conteo(Page):
         a_99 = str(random.choice([0,1]))
         a_100 = str(random.choice([0,1]))
 
-        return dict (
+        return dict (lst, 
             a_1=a_1, a_2=a_2, a_3=a_3, a_4=a_4, a_5=a_5, a_6=a_6, a_7=a_7, a_8=a_8, a_9=a_9, a_10=a_10,
             a_11=a_11, a_12=a_12, a_13=a_13, a_14=a_14, a_15=a_15, a_16=a_16, a_17=a_17, a_18=a_18, a_19=a_19, a_20=a_20,
             a_21=a_21, a_22=a_22, a_23=a_23, a_24=a_24, a_25=a_25, a_26=a_26, a_27=a_27, a_28=a_28, a_29=a_29, a_30=a_30,

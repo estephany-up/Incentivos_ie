@@ -1,3 +1,4 @@
+from django.db.models import base
 from django.db.models.base import Model
 from otree.api import (
     models,
@@ -16,7 +17,7 @@ import random
 author = 'Estephany y Yadira'
 
 doc = """
-Tareas de conteo y verbal - 4 rondas cada una
+Experimento de incentivos
 """
 
 class Constants(BaseConstants):
@@ -99,13 +100,16 @@ class Player(BasePlayer):
     treatment = models.StringField()
 
     rpta_c = models.IntegerField()
-#class Task:
-#    a_1 = models.StringField()
-#    a_2 = models.StringField()
-#    a_3 = models.StringField()
-#    a_4 = models.StringField()
-#    a_5 = models.StringField()
-#    
+
+
+class Task:
+    lst=[]
+    def func (self):
+        for i in range (1,6):
+            a_i = str(random.choice([0,1]))
+            lst.append(a_i)
+        return (lst)
+    
 #    def get_body(self, **kwargs):
 #        selection_set = kwargs.get('selection_set', [0, 1])
 #        for i in range (1,5):

@@ -11,18 +11,15 @@
   .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
     overflow:hidden;padding:10px 10px;word-break:normal;}
   .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-    font-weight:normal;overflow:hidden;padding:6px 10px;word-break:normal;}
+    font-weight:normal;overflow:hidden;padding:10px 10px;word-break:normal;}
   .tg .tg-nrix{text-align:center;vertical-align:middle}
-  .templateparameter { display: none; }
   </style>
   <table class="tg">
   <tbody>
     <tr>
-      <td class="tg-nrix">{{ a_1 }}</td>
-      <td class="tg-nrix">{{ a_2 }}</td>
-      <td class="tg-nrix">{{ a_3 }}</td>
-      <td class="tg-nrix">{{ a_4 }}</td>
-      <td class="tg-nrix">{{ a_5 }}</td>
+      {% for ab in lst %}
+        <td class="tg-nrix">{{ ab }}</td>
+      {% endfor %}
       <td class="tg-nrix">{{ a_6 }}</td>
       <td class="tg-nrix">{{ a_7 }}</td>
       <td class="tg-nrix">{{ a_8 }}</td>
@@ -142,7 +139,7 @@
   </tbody>
   </table>
 
-  {% formfield %}
+  {% formfield 'rpta_c' %}
 
 {% next_button %}
 {% endblock %}
