@@ -1,5 +1,4 @@
-from django.db.models import base
-from django.db.models.base import Model
+from typing import List
 from otree.api import (
     models,
     widgets,
@@ -13,32 +12,30 @@ from otree.api import (
 
 import random
 
-
 author = 'Estephany y Yadira'
 
 doc = """
-Experimento de incentivos
+Experimento de incentivos (Hasta tarea verbal)
 """
 
 class Constants(BaseConstants):
-    name_in_url = 'incentivos'
+    name_in_url = 'exp_incentivos'
     players_per_group = None
     num_rounds = 1
     task_time_v_p=60  #prueba verbal
     task_time_v_s=180 #verbal sin presión
     task_time_v_t=120 #verbal con presión
-    task_time_c_p=60  #prueba conteo
-    task_time_c_s=300 #conteo sin presión
-    task_time_c_t=180 #conteo con presión
 
 class Subsession(BaseSubsession):
     ##por ahora sólo se ha asignado tratamiento por participante
     ##cambiar más adelante a grupos
     def creating_session(self):
      #randomize to treatments
-        for player in self.get_players():
-            player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
-            print('Treatment:', player.treatment)
+        if self.round_number==1:
+            for player in self.get_players():
+                player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
+                print('Treatment:', player.treatment)
+
     
 class Group(BaseGroup):
     pass
@@ -96,25 +93,6 @@ class Player(BasePlayer):
     q19 = make_field('Los incentivos monetarios ofrecidos coinciden con mi esfuerzo en las tareas realizadas')
     q20 = make_field('El incentivo monetario ofrecido no está a la altura de mis expectativas')
     
-
     treatment = models.StringField()
 
-    rpta_c = models.IntegerField()
-
-
-class Task:
-    lst=[]
-    def func (self):
-        for i in range (1,6):
-            a_i = str(random.choice([0,1]))
-            lst.append(a_i)
-        return (lst)
-    
-#    def get_body(self, **kwargs):
-#        selection_set = kwargs.get('selection_set', [0, 1])
-#        for i in range (1,5):
-#            a_i = str(random.choice(selection_set))
-
-
-
-    
+ 
