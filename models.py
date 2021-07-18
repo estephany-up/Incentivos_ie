@@ -12,6 +12,8 @@ from otree.api import (
 
 import random
 
+from otree.models import player
+
 author = 'Estephany y Yadira'
 
 doc = """
@@ -20,7 +22,7 @@ Experimento de incentivos (Hasta tarea verbal)
 
 class Constants(BaseConstants):
     name_in_url = 'exp_incentivos'
-    players_per_group = None
+    players_per_group = 4
     num_rounds = 1
     task_time_v_p=60  #prueba verbal
     task_time_v_s=180 #verbal sin presión
@@ -32,16 +34,19 @@ class Subsession(BaseSubsession):
     def creating_session(self):
      #randomize to treatments
         if self.round_number==1:
-            for player in self.get_players():
-                player.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
-                print('Treatment:', player.treatment)
+            for g in self.get_groups():
+                p1=g.get_player_by_id(1)
+                p1.participant.vars['group_treatment']=random.choice(['C', 'T1', 'T2', 'T3'])
+                Group.treatment=p1.participant.vars['group_treatment']
+                #Group.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
+                print('Treatment:', p1.participant.vars['group_treatment'])
 
     
 class Group(BaseGroup):
-    pass
+    treatment=models.StringField
 
 
 class Player(BasePlayer):  
-    treatment = models.StringField()
+    pass
 
  

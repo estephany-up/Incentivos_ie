@@ -1,7 +1,7 @@
 import builtins
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
-from .models import Constants, Player
+from .models import Constants, Group, Player
 
 
 class MyPage(Page):
@@ -21,8 +21,8 @@ class Prueba_verbal(Page):
 #    timer_text = 'Tiempo que le falta para completar la ronda: '
 #    timeout_seconds = Constants.task_time_c_p
 
-class Tarea_verbal(Page):
-    if Player.treatment=='C' or Player.treatment=='T1':
+class Tarea_verbal(Page):   
+    if Group.treatment=='C' or Group.treatment=='T1':
         timer_text = 'Tiempo que le falta para completar la ronda: '
         timeout_seconds = Constants.task_time_v_s
     else:
