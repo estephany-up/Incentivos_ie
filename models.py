@@ -28,6 +28,7 @@ class Constants(BaseConstants):
     task_time_v_s=180 #verbal sin presión
     task_time_v_t=120 #verbal con presión
 
+
 class Subsession(BaseSubsession):
     ##por ahora sólo se ha asignado tratamiento por participante
     ##cambiar más adelante a grupos
@@ -36,17 +37,22 @@ class Subsession(BaseSubsession):
         if self.round_number==1:
             for g in self.get_groups():
                 p1=g.get_player_by_id(1)
-                p1.participant.vars['group_treatment']=random.choice(['C', 'T1', 'T2', 'T3'])
-                Group.treatment=p1.participant.vars['group_treatment']
+                p1.participant.vars['treatment']=random.choice(['C', 'T1', 'T2', 'T3'])
+                Group.treatment=p1.participant.vars['treatment']
                 #Group.treatment = random.choice(['C', 'T1', 'T2', 'T3'])
-                print('Treatment:', p1.participant.vars['group_treatment'])
-
+                print('Treatment:', p1.participant.vars['treatment'])
     
+  
 class Group(BaseGroup):
     treatment=models.StringField
 
 
-class Player(BasePlayer):  
-    pass
+
+class Player(BasePlayer):
+    answer_1=models.StringField()
+    answer_2=models.StringField()
+    answer_3=models.StringField()
+    answer_4=models.StringField()
+    answer_5=models.StringField()
 
  

@@ -1,7 +1,7 @@
 import builtins
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
-from .models import Constants, Group, Player
+from .models import Constants, Group, Player,Subsession
 
 
 class MyPage(Page):
@@ -27,10 +27,10 @@ class Tarea_verbal(Page):
         timeout_seconds = Constants.task_time_v_s
     else:
         timer_text = 'Tiempo que le falta para completar la ronda: '
-        timeout_seconds=Constants.task_time_v_t
+        timeout_seconds=Constants.task_time_v_t            
 
-    #def before_next_page(self):
-    #   self.player.payoff = c(self.player.solved_tasks)
+    form_model='player'
+    form_fields=['answer_1','answer_2','answer_3','answer_4','answer_5']
 
 
 class Ranking_verbal(Page):
@@ -51,7 +51,7 @@ page_sequence = [
     Introduccion,
     Instrucciones_verbal,
     #Prueba_verbal.
-    #Tarea_verbal,
+    Tarea_verbal,
     #Ranking_verbal,
     #ResultsWaitPage, 
     #Results,
