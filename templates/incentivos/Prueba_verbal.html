@@ -1,6 +1,6 @@
 {% extends "global/Page.html" %}
 {% load otree %}
-{% block title %}Prueba de Tarea Verbal{% endblock %}
+{% block title %}Tarea Verbal - prueba{% endblock %}
 {% block content %}
 <div class="instructions well well-lg">
 
@@ -9,16 +9,52 @@
              
     </p>
     <p>
-        A-L-E-A-T-O-R-I-O
+        ALEATORIO
     </p>
     <p>
         Escriba las posibles sub-palabras en el siguiente cuadro:
     </p>
-
-    {%formfields%}
+    <table>
+        <tr>
+            <td> <input type="string" name="answer_1_p" size="10"></td>
+            <td> <input type="string" name="answer_2_p" size="10"></td>
+            <td> <input type="string" name="answer_3_p" size="10"></td>
+            <td> <input type="string" name="answer_4_p" size="10"></td>
+            <td> <input type="string" name="answer_5_p" size="10"></td>
+        </tr>
+        <tr>
+            <td> <input type="string" name="answer_6_p" size="10"></td>
+            <td> <input type="string" name="answer_7_p" size="10"></td>
+            <td> <input type="string" name="answer_8_p" size="10"></td>
+            <td> <input type="string" name="answer_9_p" size="10"></td>
+            <td> <input type="string" name="answer_10_p" size="10"></td>
+        </tr>
+        <tr>
+            <td> <input type="string" name="answer_11_p" size="10"></td>
+            <td> <input type="string" name="answer_12_p" size="10"></td>
+            <td> <input type="string" name="answer_13_p" size="10"></td>
+            <td> <input type="string" name="answer_14_p" size="10"></td>
+            <td> <input type="string" name="answer_15_p" size="10"></td>
+        </tr>
+        <tr>
+            <td> <input type="string" name="answer_16_p" size="10"></td>
+            <td> <input type="string" name="answer_17_p" size="10"></td>
+            <td> <input type="string" name="answer_18_p" size="10"></td>
+            <td> <input type="string" name="answer_19_p" size="10"></td>
+            <td> <input type="string" name="answer_20_p" size="10"></td>
+        </tr>
+        <tr>
+            <td> <input type="string" name="answer_21_p" size="10"></td>
+            <td> <input type="string" name="answer_22_p" size="10"></td>
+            <td> <input type="string" name="answer_23_P" size="10"></td>
+            <td> <input type="string" name="answer_24_p" size="10"></td>
+            <td> <input type="string" name="answer_25_p" size="10"></td>
+        </tr>
+    </table>
+ 
 
     <p>
-        *Recuerde que las palabras deben ser ingresadas entre comas y con las tildes respectivas.
+        *Recuerde que las palabras deben ser ingresadas con las tildes respectivas.
     </p>
 </div>
 {% next_button %}
