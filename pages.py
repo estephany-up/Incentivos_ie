@@ -16,8 +16,16 @@ class Introduccion(Page):
     pass
 
 class Instrucciones_verbal(Page):
+    #def before_next_page(self):
+    #    self.session.vars['expiry'] = time.time() + Constants.task_time_v_p
+
     def before_next_page(self):
-        self.session.vars['expiry'] = time.time() + Constants.task_time_v_p
+        p1 = self.group.get_player_by_id(1)
+        treatment = p1.participant.vars['treatment']
+        if treatment=='C' or treatment=='T1':
+            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+        else:
+            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class Prueba_verbal(Page):
     timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -76,14 +84,17 @@ class Tarea_verbal_R1(Page):
     'answer_24_R1','answer_25_R1']
 
     def vars_for_template(self): 
-        a=self.group.hola_R1()
+        a=self.subsession.palabra_aleatoria
         return dict (a=a) 
+
+    #def before_next_page(self):
+    #    self.group.lst()
 ##verificar el formato de estoo, si va en def before o en uun wait page
-    def before_next_page(self):
-        self.player.puntaje_R1()
+#    def before_next_page(self):
+#        self.player.puntaje_R1()
 
 class Wait_1(WaitPage):
-    after_all_players_arrive='total_R1'
+    after_all_players_arrive='puntaje_R1'
 
 class Ranking_verbal_R1(Page):
     def vars_for_template(self):
@@ -99,13 +110,13 @@ class Ranking_verbal_R1(Page):
         return dict(p_p1=p_p1, p_p2=p_p2, p_p3=p_p3, p_p4=p_p4,
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
     
-    def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
-        else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+    #def before_next_page(self):
+    #    p1 = self.group.get_player_by_id(1)
+    #    treatment = p1.participant.vars['treatment']
+    #    if treatment=='C' or treatment=='T1':
+    #        self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+    #    else:
+    #        self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class Tarea_verbal_R2(Page):   
     if Group.treatment=='C' or Group.treatment=='T1':

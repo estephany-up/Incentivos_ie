@@ -28,7 +28,7 @@ class Constants(BaseConstants):
     task_time_v_s=180 #verbal sin presión
     task_time_v_t=120 #verbal con presión
     Word_list_preguntas = ['EXPERIMENTO', 'ARGENTINA', 'CABALLITO', 'CASCABELES', 'HOLOCAUSTO',
-     'MANDARINA', 'ELEFANTES', 'COBARDÍA', 'MANDARINA', 'TELEPATÍA']
+     'MANDARINA', 'ELEFANTES', 'COBARDÍA', 'TELEPATÍA', 'COMUNICACIÓN']
 
     Word_list_ALEATORIO = ['aerolito', 'lotearía', 'aletría', 'atolero', 'atolera', 'latería', 
     'laterío', 'latiera', 'loteara', 'lotería', 'oleario', 'olearia', 'realito', 'alerta', 'alerto', 
@@ -192,7 +192,7 @@ class Constants(BaseConstants):
     'este', 'etas', 'late', 'lean', 'leas', 'leen', 'lees', 'lena', 'lene', 'lesa', 'neas', 'neta', 'sale', 'sane', 'sean', 'sena', 'sete', 'seta', 
     'tael', 'talé', 'tasé', 'teas', 'tela', 'telé', 'tena', 'tesa', 'tesé']
 
-    Word_list_COBARDIA = ['acribado', 'boricada', 'carábido', 'abdicar', 'acribad', 'bocarda', 'brocada', 'cribada', 'cribado', 'acibaró', 'acibaro', 
+    Word_list_COBARDÍA = ['acribado', 'boricada', 'carábido', 'abdicar', 'acribad', 'bocarda', 'brocada', 'cribada', 'cribado', 'acibaró', 'acibaro', 
     'arábico', 'rociaba', 'acárido', 'arcadio', 'aricado', 'cariado', 'rabiado', 'rociada', 'abdica', 'abdicó', 'abocad', 'bocada', 'cabida', 'cabido', 
     'cobrad', 'cribad', 'abarcó', 'abarco', 'abocar', 'abraco', 'acíbar', 'acriba', 'acribó', 'barcia', 'bárico', 'bárica', 'cabría', 'cabrío', 'cárabo', 
     'caroba', 'criaba', 'croaba', 'ociaba', 'rábico', 'rábica', 'aborda', 'acadio', 'acodar', 'acordá', 'adobar', 'arcado', 'aricad', 'cadira', 'carado', 
@@ -224,7 +224,7 @@ class Constants(BaseConstants):
     'amia', 'amín', 'amir', 'arma', 'imán', 'maná', 'maní', 'mara', 'miar', 'mina', 'mira', 'rama', 'rima', 'adir', 'adra', 'anda', 'arad', 'arda', 'ardí', 'dará', 
     'dirá', 'dría', 'inda', 'nada', 'nadi', 'rada', 'rand', 'aína', 'aira', 'aran', 'aria', 'arna', 'irán', 'nana', 'raía', 'rain', 'rana', 'rían']
 #una lista para reemplazar
-    Word_list_TELEPATIA = ['talepate', 'apetite', 'paletea', 'patalee', 'pataleé', 'petatea', 'pleitea', 'tepetal', 'apalee', 'apaleé', 'apeale', 'apealé', 
+    Word_list_TELEPATÍA = ['talepate', 'apetite', 'paletea', 'patalee', 'pataleé', 'petatea', 'pleitea', 'tepetal', 'apalee', 'apaleé', 'apeale', 'apealé', 
     'atipla', 'atiplé', 'atiple', 'lapita', 'paleta', 'pateta', 'petate', 'pileta', 'platea', 'platee', 'plateé', 'pleita', 'tápate', 'tapete', 'tapial', 'aletea', 
     'atleta', 'talete', 'teleta', 'apela', 'apele', 'apelé', 'apila', 'apile', 'apilé', 'apita', 'apite', 'apité', 'atipa', 'atipe', 'atipé', 'épale', 'epata', 
     'epate', 'epaté', 'etapa', 'paila', 'palea', 'palee', 'paleé', 'palia', 'palie', 'palié', 'palta', 'patea', 'patee', 'pateé', 'peala', 'peale', 'pealé', 'pelea', 
@@ -235,8 +235,25 @@ class Constants(BaseConstants):
     'alié', 'alíe', 'alta', 'atal', 'atea', 'lata', 'late', 'latí', 'leía', 'lita', 'lité', 'tael', 'tala', 'talé', 'tata', 'tate', 'tela', 'tele', 'teta', 'tete', 
     'tila', 'tile', 'tita']
 
+    Word_list_COMUNICACIÓN = ['incomunica', 'incomunico', 'incomunicó', 'amunicionó', 'amuniciono', 'comunican', 'concomían', 'miccionan', 'inoacción', 
+    'municiona', 'municiono', 'municionó', 'cinámico', 'coacción', 'comunica', 'comunico', 'comunicó', 'concoman', 'concomía', 'micciona', 'micciono', 
+    'miccionó', 'monicaco', 'canónico', 'cauciono', 'caucionó', 'comunión', 'conocían', 'inacción', 'mocionan', 'monición', 'munición', 'nomónica', 
+    'aniónico', 'cimacio', 'cocción', 'concoma', 'concomí', 'micción', 'acciono', 'accionó', 'amínico', 'amónico', 'anímico', 'aucción', 'canción', 'caución', 
+    'ciánico', 'cocinan', 'coición', 'concina', 'concino', 'conción', 'concoma', 'conmina', 'conmino', 'conminó', 'conocía', 'icónica', 'icónico', 'incaico', 
+    'minción', 'minoica', 'minoico', 'minucia', 'mociona', 'monoica', 'anónimo', 'anuncio', 'innocuo', 'innocua', 'minuano', 'cómica', 'cómico', 'macuco', 'acción', 
+    'acucio', 'acució', 'ancuco', 'caminí', 'camino', 'camión', 'cancín', 'cancón', 'cición', 'cínica', 'cínico', 'cocían', 'cocina', 'cocino', 'cocinó', 'comuna', 
+    'concia', 'concón', 'cónica', 'cónico', 'conocí', 'conuco', 'cumano', 'mocano', 'moción', 'nómica', 'nómico', 'amonio', 'amuino', 'amuinó', 'canino', 'incoan', 
+    'incona', 'incono', 'inconó', 'inicua', 'inicuo', 'inocua', 'inocuo', 'iónica', 'iónico', 'minian', 'minina', 'minino', 'monona', 'nación', 'noción', 'nomina', 
+    'nomino', 'nominó', 'nuncio', 'ominan', 'uncían', 'unción', 'cómic', 'ácimo', 'acoco', 'acocó', 'caico', 'camón', 'cinca', 'cinco', 'cocan', 'cocía', 'coció', 'coima', 
+    'coman', 'comía', 'comió', 'común', 'conca', 'cuaco', 'cucan', 'cuica', 'cuico', 'icaco', 'macío', 'macón', 'manco', 'mocan', 'ocumo', 'ación', 'acuno', 'acunó', 
+    'amino', 'amono', 'amonó', 'ancón', 'ánimo', 'canon', 'cianí', 'cinia', 'cuina', 'cuino', 'ícono', 'incoa', 'incoo', 'incoó', 'minan', 'minia', 'minió', 'minio', 
+    'miona', 'nació', 'nimio', 'nimia', 'nomon', 'nunca', 'uncía', 'unció', 'única', 'único', 'aonio', 'nonio', 'unían', 'unión', 'caco', 'cica', 'cima', 'coca', 'cocí', 
+    'coco', 'coma', 'comí', 'como', 'cuca', 'cuco', 'cuma', 'mica', 'moca', 'moco', 'muca', 'muco', 'cano', 'cian', 'cono', 'cuan', 'cuán', 'cuin', 'cuna', 'imán', 'inca', 
+    'maní', 'mano', 'miau', 'mina', 'mona', 'mono', 'muna', 'muon', 'nací', 'naco', 'noca', 'noma', 'nomo', 'nuca', 'nuco', 'numo', 'ocio', 'uncí', 'anuo', 'nona', 'nono', 
+    'oían', 'unan', 'unía', 'unió']
+
     lista =[Word_list_EXPERIMENTO, Word_list_ARGENTINA, Word_list_CABALLITO, Word_list_CASCABELES, Word_list_HOLOCAUSTO,
-    Word_list_ELEFANTES, Word_list_COBARDIA, Word_list_MANDARINA, Word_list_TELEPATIA ]
+    Word_list_ELEFANTES, Word_list_COBARDÍA, Word_list_MANDARINA, Word_list_TELEPATÍA, Word_list_COMUNICACIÓN ]
 
 
 class Subsession(BaseSubsession):
@@ -253,6 +270,8 @@ class Subsession(BaseSubsession):
                 print('Treatment:', p1.participant.vars['treatment']) 
 ##verificar que pasa si es uqe s epone en subsesion
         self.palabra_aleatoria = random.choice(Constants.Word_list_preguntas)
+        self.session.vars['palabra']=self.palabra_aleatoria
+
         return self.palabra_aleatoria
 
     palabra_aleatoria = models.CharField(initial='')
@@ -304,9 +323,120 @@ class Group(BaseGroup):
         return [i_1, i_2, i_3, i_4], [r_1, r_2, r_3, r_4]
 
     ##para R1
-    def hola_R1(self):
-        self.palabra_aleatoria = random.choice(Constants.Word_list_preguntas)
-        return self.palabra_aleatoria
+    #def hola_R1(self):
+    #    self.palabra_aleatoria = random.choice(Constants.Word_list_preguntas)
+    #    return self.palabra_aleatoria
+
+    def puntaje_R1(self): 
+        #for list in Constants.lista:
+        if self.session.vars['palabra']=='ARGENTINA':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_ARGENTINA:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='CABALLITO':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_CABALLITO:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='CASCABELES':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_CASCABELES:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='COBARDÍA':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_COBARDÍA:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='ELEFANTES':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_ELEFANTES:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='EXPERIMENTO':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_EXPERIMENTO:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='HOLOCAUSTO':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_HOLOCAUSTO:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='MANDARINA':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_MANDARINA:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
+        if self.session.vars['palabra']=='TELEPATÍA':
+            for p in self.get_players():
+                respuestas = [p.answer_1_R1, p.answer_2_R1, p.answer_3_R1, p.answer_4_R1, p.answer_5_R1, p.answer_6_R1, 
+                p.answer_7_R1, p.answer_8_R1, p.answer_9_R1, p.answer_10_R1, p.answer_11_R1, p.answer_12_R1, 
+                p.answer_13_R1, p.answer_14_R1, p.answer_15_R1, p.answer_16_R1, p.answer_17_R1, p.answer_18_R1, 
+                p.answer_19_R1, p.answer_20_R1, p.answer_21_R1, p.answer_22_R1, p.answer_23_R1, p.answer_24_R1, p.answer_25_R1] 
+                for x in respuestas:
+                    if x in Constants.Word_list_TELEPATÍA:
+                        p.total_score_R1=p.total_score_R1 + 1
+                    else:
+                        p.total_score_R1=p.total_score_R1
+                return p.total_score_R1
 
     def rank_R1(self):
         i_1=0 ##puestos 
@@ -506,8 +636,7 @@ class Player(BasePlayer):
         self.answer_7_p, self.answer_8_p, self.answer_9_p, self.answer_10_p, self.answer_11_p, self.answer_12_p, self.answer_13_p, 
         self.answer_14_p, self.answer_15_p, self.answer_16_p, self.answer_17_p, self.answer_18_p, self.answer_19_p, self.answer_20_p, 
         self.answer_21_p, self.answer_22_p, self.answer_23_p, self.answer_24_p, self.answer_25_p]   
-        
-        
+           
         for x in respuestas:
             if x in Constants.Word_list_ALEATORIO:
                 self.total_score_p=self.total_score_p + 1
@@ -544,19 +673,20 @@ class Player(BasePlayer):
 
     total_score_R1=models.IntegerField(initial=0)
 
-    def puntaje_R1(self): 
-        respuestas = [self.answer_1_R1, self.answer_2_R1, self.answer_3_R1, self.answer_4_R1, self.answer_5_R1, self.answer_6_R1, 
-        self.answer_7_R1, self.answer_8_R1, self.answer_9_R1, self.answer_10_R1, self.answer_11_R1, self.answer_12_R1, self.answer_13_R1, 
-        self.answer_14_R1, self.answer_15_R1, self.answer_16_R1, self.answer_17_R1, self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, 
-        self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, self.answer_24_R1, self.answer_25_R1]   
+
+    #def puntaje_R1(self): 
+    #    respuestas = [self.answer_1_R1, self.answer_2_R1, self.answer_3_R1, self.answer_4_R1, self.answer_5_R1, self.answer_6_R1, 
+    #    self.answer_7_R1, self.answer_8_R1, self.answer_9_R1, self.answer_10_R1, self.answer_11_R1, self.answer_12_R1, self.answer_13_R1, 
+    #    self.answer_14_R1, self.answer_15_R1, self.answer_16_R1, self.answer_17_R1, self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, 
+    #    self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, self.answer_24_R1, self.answer_25_R1]   
         
-        for list in Constants.lista:
-            for x in respuestas:
-                if x in list:
-                    self.total_score_R1=self.total_score_R1 + 1
-                else:
-                    self.total_score_R1=self.total_score_R1
-        return self.total_score_R1
+    #    for list in Constants.lista:
+    #        for x in respuestas:
+    #            if x in list:
+    #                self.total_score_R1=self.total_score_R1 + 1
+    #            else:
+    #                self.total_score_R1=self.total_score_R1
+    #    return self.total_score_R1
 
     #para R2
     answer_1_R2=models.StringField(blank=True)
