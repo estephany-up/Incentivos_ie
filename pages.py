@@ -6,28 +6,20 @@ from .models import Constants, Player, Group, Subsession
 import time, random
 
 
-class MyPage(Page):
-    pass
+#class MyPage(Page):
+#    pass
 
 class Reglas_generales(Page):
     pass
 
 class Introduccion(Page):
     def vars_for_template(self):
-        a=self.participant.code
-        return dict(a=a)
+        code=self.player.id_code()       
+        return dict(a=code)
 
 class Instrucciones_verbal(Page):
-    #def before_next_page(self):
-    #    self.session.vars['expiry'] = time.time() + Constants.task_time_v_p
-
     def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
-        else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+        self.session.vars['expiry'] = time.time() + Constants.task_time_v_p
 
 class Prueba_verbal(Page):
     timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -38,18 +30,14 @@ class Prueba_verbal(Page):
     'answer_8_p','answer_9_p','answer_10_p','answer_11_p','answer_12_p','answer_13_p','answer_14_p','answer_15_p',
     'answer_16_p','answer_17_p','answer_18_p','answer_19_p','answer_20_p','answer_21_p','answer_22_p','answer_23_p',
     'answer_24_p','answer_25_p']
-
-    def vars_for_template(self): 
-        a=self.group.hola_p()
-        return dict (a=a)
     
     def before_next_page(self):
         self.player.puntaje_p()
 
 class Wait_p(WaitPage):
-    after_all_players_arrive='puntaje_p'
+    after_all_players_arrive='wp_p'
 
-class Ranking_verbal_p(WaitPage):
+class Ranking_verbal_p(Page):
     def vars_for_template(self):
         pt_p, p_p = self.group.rank_p()
         p_p1=p_p[0]
@@ -110,13 +98,13 @@ class Ranking_verbal_R1(Page):
         return dict(p_p1=p_p1, p_p2=p_p2, p_p3=p_p3, p_p4=p_p4,
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
     
-    #def before_next_page(self):
-    #    p1 = self.group.get_player_by_id(1)
-    #    treatment = p1.participant.vars['treatment']
-    #    if treatment=='C' or treatment=='T1':
-    #        self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
-    #    else:
-    #        self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+    def before_next_page(self):
+        p1 = self.group.get_player_by_id(1)
+        treatment = p1.participant.vars['treatment']
+        if treatment=='C' or treatment=='T1':
+            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+        else:
+            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class pay_1(WaitPage):
     after_all_players_arrive='pp_1'
@@ -275,24 +263,24 @@ page_sequence = [
     #Reglas_generales,
     Introduccion,
     Instrucciones_verbal,
-    #Prueba_verbal,
-    #Wait_p,
-    #Ranking_verbal_p,
-    #Tarea_verbal_R1,
-    #Wait_1,
-    #Ranking_verbal_R1,
-    #pay_1,
-    #Tarea_verbal_R2,
-    #Wait_2,
-    #Ranking_verbal_R2,
-    #pay_2,
-    #Tarea_verbal_R3,
-    #Wait_3,
-    #Ranking_verbal_R3,
-    #pay_3,
-    #Tarea_verbal_R4,
-    #ait_4,
-    #Ranking_verbal_R4,
-    #pay_4, 
-    #Cambio_app,
+    Prueba_verbal,
+    Wait_p,
+    Ranking_verbal_p,
+    Tarea_verbal_R1,
+    Wait_1,
+    Ranking_verbal_R1,
+    pay_1,
+    Tarea_verbal_R2,
+    Wait_2,
+    Ranking_verbal_R2,
+    pay_2,
+    Tarea_verbal_R3,
+    Wait_3,
+    Ranking_verbal_R3,
+    pay_3,
+    Tarea_verbal_R4,
+    Wait_4,
+    Ranking_verbal_R4,
+    pay_4, 
+    Cambio_app,
 ]

@@ -257,10 +257,6 @@ class Constants(BaseConstants):
 
     point=0.2
 
-    abcs=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z']
-    nums=['1','2','3','4','5','6','7','8','9']
-
-
 class Subsession(BaseSubsession):
     def creating_session(self):
         if self.round_number==1:
@@ -269,18 +265,6 @@ class Subsession(BaseSubsession):
                 p1.participant.vars['treatment']=random.choice(['C', 'T1', 'T2', 'T3'])
                 Group.treatment=p1.participant.vars['treatment']
                 print('Treatment:', p1.participant.vars['treatment']) 
-
-    ###REVISAR ID
-            for player in self.get_players():
-                a=random.choice(Constants.abcs)
-                b=random.choice(Constants.abcs)
-                c=random.choice(Constants.abcs)
-                d=random.choice(Constants.nums)
-                e=random.choice(Constants.nums)
-                f=random.choice(Constants.nums)
-                player.participant.vars['ID_code']=a+b+c+d+e+f
-                #Player.ID_code=player.participant.vars['ID_code']
-
 
 def hola_1(): 
     palabra_aleatoria = models.CharField(initial='')
@@ -318,6 +302,11 @@ mariposa_4 = hola_4()
   
 class Group(BaseGroup):
     treatment=models.StringField
+
+    arrive_p=models.StringField()
+
+    def wp_p(self):   
+        self.arrive_p='Listo'
 
     def rank_p(self):
         i_1=0 ##puestos 
@@ -631,8 +620,6 @@ class Group(BaseGroup):
                 player.pay_4=0
 
 class Player(BasePlayer):
-    ID_code= models.CharField() ## he creado ID, pero preguntar si de puede conseguir el participant code
-    #para prueba
     answer_1_p=models.StringField(blank=True)
     answer_2_p=models.StringField(blank=True)
     answer_3_p=models.StringField(blank=True)
@@ -712,6 +699,7 @@ class Player(BasePlayer):
         self.answer_12_R1, self.answer_13_R1, self.answer_14_R1, self.answer_15_R1, self.answer_16_R1, self.answer_17_R1, 
         self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, 
         self.answer_24_R1, self.answer_25_R1]
+
         if mariposa_1 == 'ARGENTINA':
             for x in respuestas:
                     if x in Constants.Word_list_ARGENTINA:
@@ -1154,3 +1142,17 @@ class Player(BasePlayer):
     pay_2=models.CurrencyField(initial=0)
     pay_3=models.CurrencyField(initial=0)
     pay_4=models.CurrencyField(initial=0)
+
+###REVISAR ID
+    def id_code(self):
+        abcs=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z']
+        nums=['1','2','3','4','5','6','7','8','9']
+        a=random.choice(abcs)
+        b=random.choice(abcs)
+        c=random.choice(abcs)
+        d=random.choice(nums)
+        e=random.choice(nums)
+        f=random.choice(nums)
+        self.participant.label=a+b+c+d+e+f
+        self.participant.vars['id_code']=self.participant.label
+        return self.participant.label
