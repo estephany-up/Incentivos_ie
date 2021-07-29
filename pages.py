@@ -260,7 +260,7 @@ class Cambio_app(Page):
 
 page_sequence = [
     #MyPage,
-    #Reglas_generales,
+    Reglas_generales,
     Introduccion,
     Instrucciones_verbal,
     Prueba_verbal,
