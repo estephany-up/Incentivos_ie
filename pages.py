@@ -2,7 +2,7 @@ from otree.models import player
 #from incentivos.models import Subsession
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
-from .models import Constants, Player, Group
+from .models import Constants, Player, Group, Subsession
 import time, random
 
 
@@ -13,7 +13,9 @@ class Reglas_generales(Page):
     pass
 
 class Introduccion(Page):
-    pass
+    def vars_for_template(self):
+        a=self.participant.code
+        return dict(a=a)
 
 class Instrucciones_verbal(Page):
     #def before_next_page(self):
@@ -84,17 +86,15 @@ class Tarea_verbal_R1(Page):
     'answer_24_R1','answer_25_R1']
 
     def vars_for_template(self): 
-        a=self.subsession.palabra_aleatoria
+        a=self.group.pato_1()
         return dict (a=a) 
 
-    #def before_next_page(self):
-    #    self.group.lst()
-##verificar el formato de estoo, si va en def before o en uun wait page
-#    def before_next_page(self):
-#        self.player.puntaje_R1()
+    def before_next_page(self):
+        self.player.puntaje_R1()
+
 
 class Wait_1(WaitPage):
-    after_all_players_arrive='puntaje_R1'
+    after_all_players_arrive='wp_1'
 
 class Ranking_verbal_R1(Page):
     def vars_for_template(self):
@@ -118,6 +118,9 @@ class Ranking_verbal_R1(Page):
     #    else:
     #        self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
+class pay_1(WaitPage):
+    after_all_players_arrive='pp_1'
+
 class Tarea_verbal_R2(Page):   
     if Group.treatment=='C' or Group.treatment=='T1':
         timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -133,11 +136,14 @@ class Tarea_verbal_R2(Page):
     'answer_24_R2','answer_25_R2']
 
     def vars_for_template(self): 
-        a=self.group.hola_R2()
+        a=self.group.pato_2()
         return dict (a=a) 
 
+    def before_next_page(self):
+        self.player.puntaje_R2()
+
 class Wait_2(WaitPage):
-    after_all_players_arrive='total_R2'
+    after_all_players_arrive='wp_2'
 
 class Ranking_verbal_R2(Page):
     def vars_for_template(self):
@@ -161,6 +167,9 @@ class Ranking_verbal_R2(Page):
         else:
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
+class pay_2(WaitPage):
+    after_all_players_arrive='pp_2'
+
 class Tarea_verbal_R3(Page):   
     if Group.treatment=='C' or Group.treatment=='T1':
         timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -176,11 +185,14 @@ class Tarea_verbal_R3(Page):
     'answer_24_R3','answer_25_R3']
 
     def vars_for_template(self): 
-        a=self.group.hola_R3()
+        a=self.group.pato_3()
         return dict (a=a) 
 
+    def before_next_page(self):
+        self.player.puntaje_R3() 
+
 class Wait_3(WaitPage):
-    after_all_players_arrive='total_R3'
+    after_all_players_arrive='wp_3'
 
 class Ranking_verbal_R3(Page):
     def vars_for_template(self):
@@ -204,6 +216,9 @@ class Ranking_verbal_R3(Page):
         else:
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
 
+class pay_3(WaitPage):
+    after_all_players_arrive='pp_3'
+
 class Tarea_verbal_R4(Page):   
     if Group.treatment=='C' or Group.treatment=='T1':
         timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -219,11 +234,14 @@ class Tarea_verbal_R4(Page):
     'answer_24_R4','answer_25_R4']
 
     def vars_for_template(self): 
-        a=self.group.hola_R4()
+        a=self.group.pato_4()
         return dict (a=a) 
 
+    def before_next_page(self):
+        self.player.puntaje_R4()
+
 class Wait_4(WaitPage):
-    after_all_players_arrive='total_R4'
+    after_all_players_arrive='wp_4'
 
 class Ranking_verbal_R4(Page):
     def vars_for_template(self):
@@ -239,34 +257,42 @@ class Ranking_verbal_R4(Page):
         return dict(p_p1=p_p1, p_p2=p_p2, p_p3=p_p3, p_p4=p_p4,
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
 
-
-class ResultsWaitPage(WaitPage):
-    pass
-
-class Results(Page):
-    pass
+class pay_4(WaitPage):
+    after_all_players_arrive='pp_4'
+    
+class Cambio_app(Page):
+    def before_next_page(self):
+        a=self.player.pay_1
+        b=self.player.pay_2
+        c=self.player.pay_3
+        d=self.player.pay_4
+        self.player.payoff=a+b+c+d
+        return self.player.payoff
 
 
 page_sequence = [
     #MyPage,
-    Reglas_generales,
+    #Reglas_generales,
     Introduccion,
     Instrucciones_verbal,
     #Prueba_verbal,
     #Wait_p,
     #Ranking_verbal_p,
-    Tarea_verbal_R1,
-    Wait_1,
-    Ranking_verbal_R1,
+    #Tarea_verbal_R1,
+    #Wait_1,
+    #Ranking_verbal_R1,
+    #pay_1,
     #Tarea_verbal_R2,
     #Wait_2,
     #Ranking_verbal_R2,
+    #pay_2,
     #Tarea_verbal_R3,
     #Wait_3,
     #Ranking_verbal_R3,
+    #pay_3,
     #Tarea_verbal_R4,
-    #Wait_4,
+    #ait_4,
     #Ranking_verbal_R4,
-    #ResultsWaitPage, 
-    #Results,
+    #pay_4, 
+    #Cambio_app,
 ]

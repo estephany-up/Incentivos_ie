@@ -10,14 +10,14 @@
         En esta tarea, tendrás que resolver el juego “Rompecabezas de palabras en 
         palabras”, el cual se explicará a continuación. Se presentará en tu pantalla 
         una palabra. A partir de las letras que compongan esta palabra, se deberá formar 
-        sub-palabras de mínimo cuatro letras. Por ejemplo, de la palabra A-L-E-A-T-O-R-I-O 
+        sub-palabras de mínimo cuatro letras. Por ejemplo, de la palabra ALEATORIO
         se puede obtener las siguientes sub-palabras: rata, óleo, roto, rota, tarea, litera, lotería, etc. 
              
     </p>
     <p>
         En el caso de que la palabra general tenga vocales con tildes, al momento de formar 
         las sub-palabras, estas pueden considerarse como si no tuvieran tildes, o viceversa. 
-        En el ejemplo anterior, se tenía la palabra A-L-E-A-T-O-R-I-O, con la cual se formó 
+        En el ejemplo anterior, se tenía la palabra ALEATORIO, con la cual se formó 
         la sub-palabra lotería. En este caso la palabra base no contenía la vocal "i" con tilde; 
         sin embargo, al formar la sub-palabra, se consideró la vocal "i" con tilde, lo que se 
         consideraría como una respuesta correcta. 
@@ -28,11 +28,26 @@
     <p>
         Cabe resaltar que las posibles sub-palabras deberán ser ingresadas en el cuadro de respuestas 
         de la siguiente manera: 
-        ###PONER IMAGEN###
     </p>
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          overflow:hidden;padding:10px 10px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+          font-weight:normal;overflow:hidden;padding:10px 10px;word-break:normal;}
+        .tg .tg-nrix{text-align:center;vertical-align:middle}
+        </style>
+        <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-nrix">lotería</th>
+          </tr>
+        </thead>
+        </table>
+    <br>
     <p>
-        Las sub-palabras se deberán encontrar entre comas. En caso contrario, no se considerarán 
-        como respuestas; por lo tanto, se obtendrá un puntaje de cero. Por último, por cada sub-palabra 
+        Las sub-palabras se deberán encontrar entre correctamente y sin espacios. En caso contrario, no se considerarán 
+        como respuestas; por tanto, se obtendrá un puntaje de cero. Por último, por cada sub-palabra 
         correcta se obtendrá un punto.
     </p>
     {%if group.treatment == 'C'%}
