@@ -277,10 +277,14 @@ def hola_2():
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
     if mariposa_1 == palabra_aleatoria:
         palabra_aleatoria=random.choice(Constants.Word_list_preguntas)
+        return palabra_aleatoria
     elif mariposa_1 != palabra_aleatoria:
         return palabra_aleatoria
 mariposa_2 = hola_2()
-
+###revisar el None, si sale la misma palabra -->while
+##cambiar ID por label
+##que no pase si es que está vacío -->correr esa parte
+##mostrar el pago --> revisar si es que funciona para ambas apps
 def hola_3(): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
