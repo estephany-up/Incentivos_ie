@@ -266,7 +266,7 @@ class Subsession(BaseSubsession):
             for g in self.get_groups():
                 p1=g.get_player_by_id(1)
                 p1.participant.vars['treatment']=next(treat)
-                Group.treatment=p1.participant.vars['treatment']
+                g.treatment=p1.participant.vars['treatment']
                 print('Treatment:', p1.participant.vars['treatment']) 
 
         #import itertools
@@ -327,7 +327,7 @@ def hola_4(subsession:Subsession):
 
   
 class Group(BaseGroup):
-    treatment=models.StringField
+    treatment=models.CharField()
 
     arrive_p=models.StringField()
 

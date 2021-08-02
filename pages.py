@@ -13,10 +13,6 @@ class Reglas_generales(Page):
     pass
 
 class Introduccion(Page):
-    def is_displayed(self):
-        p1 = self.group.get_player_by_id(1)
-        Group.treatment = p1.participant.vars['treatment']
-        return self.round_number == 1
     def vars_for_template(self):
         code=self.player.id_code()       
         return dict(a=code)
@@ -58,7 +54,7 @@ class Ranking_verbal_p(Page):
     def before_next_page(self):
         #p1 = self.group.get_player_by_id(1)
         #treatment = p1.participant.vars['treatment']
-        if Group.treatment=='C' or Group.treatment=='T1':
+        if self.group.treatment=='C' or self.group.treatment=='T1':
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
@@ -69,13 +65,16 @@ class Tarea_verbal_R1(Page):
         timeout_seconds = Constants.task_time_v_s
     else:
         timer_text = 'Tiempo que le falta para completar la ronda: '
-        timeout_seconds=Constants.task_time_v_t            
+        timeout_seconds=Constants.task_time_v_t        
 
     form_model='player'
     form_fields=['answer_1_R1','answer_2_R1','answer_3_R1','answer_4_R1','answer_5_R1','answer_6_R1','answer_7_R1',
     'answer_8_R1','answer_9_R1','answer_10_R1','answer_11_R1','answer_12_R1','answer_13_R1','answer_14_R1','answer_15_R1',
     'answer_16_R1','answer_17_R1','answer_18_R1','answer_19_R1','answer_20_R1','answer_21_R1','answer_22_R1','answer_23_R1',
     'answer_24_R1','answer_25_R1']
+
+    def get_timeout_seconds(self):
+        return self.session.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_1()
@@ -127,6 +126,9 @@ class Tarea_verbal_R2(Page):
     'answer_16_R2','answer_17_R2','answer_18_R2','answer_19_R2','answer_20_R2','answer_21_R2','answer_22_R2','answer_23_R2',
     'answer_24_R2','answer_25_R2']
 
+    def get_timeout_seconds(self):
+        return self.session.vars['expiry'] - time.time()
+
     def vars_for_template(self): 
         a=self.group.pato_2()
         return dict (a=a) 
@@ -176,6 +178,9 @@ class Tarea_verbal_R3(Page):
     'answer_16_R3','answer_17_R3','answer_18_R3','answer_19_R3','answer_20_R3','answer_21_R3','answer_22_R3','answer_23_R3',
     'answer_24_R3','answer_25_R3']
 
+    def get_timeout_seconds(self):
+        return self.session.vars['expiry'] - time.time()
+
     def vars_for_template(self): 
         a=self.group.pato_3()
         return dict (a=a) 
@@ -224,6 +229,9 @@ class Tarea_verbal_R4(Page):
     'answer_8_R4','answer_9_R4','answer_10_R4','answer_11_R4','answer_12_R4','answer_13_R4','answer_14_R4','answer_15_R4',
     'answer_16_R4','answer_17_R4','answer_18_R4','answer_19_R4','answer_20_R4','answer_21_R4','answer_22_R4','answer_23_R4',
     'answer_24_R4','answer_25_R4']
+
+    def get_timeout_seconds(self):
+        return self.session.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_4()
