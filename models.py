@@ -255,53 +255,75 @@ class Constants(BaseConstants):
     lista =[Word_list_EXPERIMENTO, Word_list_ARGENTINA, Word_list_CABALLITO, Word_list_CASCABELES, Word_list_HOLOCAUSTO,
     Word_list_ELEFANTES, Word_list_COBARDÍA, Word_list_MANDARINA, Word_list_TELEPATÍA, Word_list_COMUNICACIÓN ]
 
-    point=0.2
+    s_inc=0
+    c_inc=0.2
 
 class Subsession(BaseSubsession):
     def creating_session(self):
         if self.round_number==1:
+            import itertools
+            treat = itertools.cycle(['C','T1','T2','T3'])
             for g in self.get_groups():
                 p1=g.get_player_by_id(1)
-                p1.participant.vars['treatment']=random.choice(['C', 'T1', 'T2', 'T3'])
+                p1.participant.vars['treatment']=next(treat)
                 Group.treatment=p1.participant.vars['treatment']
                 print('Treatment:', p1.participant.vars['treatment']) 
+
+        #import itertools
+        #colors = itertools.cycle(['blue', 'red'])
+        #for player in self.get_players():
+        #    player.color = next(colors)
+        self.mariposa_1=hola_1()
+        self.mariposa_2=hola_2(self)
+        self.mariposa_3=hola_3(self)
+        self.mariposa_4=hola_4(self)
+    
+    mariposa_1=models.CharField()
+    mariposa_2=models.CharField()
+    mariposa_3=models.CharField()
+    mariposa_4=models.CharField()
 
 def hola_1(): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
     return palabra_aleatoria
-mariposa_1 = hola_1()
+#mariposa_1 = hola_1()
 
-def hola_2(): 
+def hola_2(subsession:Subsession): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
-    if mariposa_1 == palabra_aleatoria:
+    while subsession.mariposa_1 == palabra_aleatoria:
         palabra_aleatoria=random.choice(Constants.Word_list_preguntas)
-        return palabra_aleatoria
-    elif mariposa_1 != palabra_aleatoria:
-        return palabra_aleatoria
-mariposa_2 = hola_2()
-###revisar el None, si sale la misma palabra -->while
+        if subsession.mariposa_1 != palabra_aleatoria:
+            break
+    return palabra_aleatoria
+#mariposa_2 = hola_2()
+
+###revisar el None, si sale la misma palabra -->while --> revisar para uno y si es que va, replicar 
 ##cambiar ID por label
-##que no pase si es que está vacío -->correr esa parte
+##que no pase si es que está vacío -->correr esa parte (aun falta)
 ##mostrar el pago --> revisar si es que funciona para ambas apps
-def hola_3(): 
+##RECORDAR QUE NO A TODOS LOS PARTICIOANTES SE LES PAGAN, SÓLO A LOS DEL TRATAMIENTO 1 Y 3
+######es decir, sólo a esos grupos se les paga 0.20 por pregunta, o sino 0
+def hola_3(subsession:Subsession): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
-    if palabra_aleatoria == mariposa_1 or palabra_aleatoria == mariposa_2:
+    while palabra_aleatoria == subsession.mariposa_1 or palabra_aleatoria == subsession.mariposa_2:
         palabra_aleatoria=random.choice(Constants.Word_list_preguntas)
-    elif palabra_aleatoria != mariposa_1 and palabra_aleatoria != mariposa_2:
-        return palabra_aleatoria
-mariposa_3 = hola_3()
+        if palabra_aleatoria != subsession.mariposa_1 and palabra_aleatoria != subsession.mariposa_2:
+            break
+    return palabra_aleatoria
+#mariposa_3 = hola_3()
 
-def hola_4(): 
+def hola_4(subsession:Subsession): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
-    if palabra_aleatoria == mariposa_1 or palabra_aleatoria == mariposa_2 or palabra_aleatoria == mariposa_3:
+    while palabra_aleatoria == subsession.mariposa_1 or palabra_aleatoria == subsession.mariposa_2 or palabra_aleatoria == subsession.mariposa_3:
         palabra_aleatoria=random.choice(Constants.Word_list_preguntas)
-    elif palabra_aleatoria != mariposa_1 and palabra_aleatoria != mariposa_2 and palabra_aleatoria != mariposa_3:
-        return palabra_aleatoria
-mariposa_4 = hola_4()
+        if palabra_aleatoria != subsession.mariposa_1 and palabra_aleatoria != subsession.mariposa_2 and palabra_aleatoria != subsession.mariposa_3:
+            break
+    return palabra_aleatoria
+#mariposa_4 = hola_4()
 
   
 class Group(BaseGroup):
@@ -353,7 +375,7 @@ class Group(BaseGroup):
     def pato_1(self):    
         players = self.get_players()
         for p in players: 
-            p.palabra_pregunta_R1=mariposa_1
+            p.palabra_pregunta_R1=self.subsession.mariposa_1
         return p.palabra_pregunta_R1    
 
     arrive_1=models.StringField()
@@ -409,17 +431,25 @@ class Group(BaseGroup):
         #[r_1, r_2, r_3, r_4]
 
     def pp_1(self):
-        for player in self.get_players():
-            if player.id_in_group == self.puesto1_R1:
-                player.pay_1=player.total_score_R1*Constants.point
-            else:
-                player.pay_1=0
+        if self.treatment=='T1' or self.treatment=='T3':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R1:
+                    player.pay_1=player.total_score_R1*Constants.c_inc
+                else:
+                    player.pay_1=0
+        elif self.treatment=='C' or self.treatment=='T2':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R1:
+                    player.pay_1=player.total_score_R1*Constants.s_inc
+                else:
+                    player.pay_1=0
+
 
     ##para R2
     def pato_2(self):    
         players = self.get_players()
         for p in players: 
-            p.palabra_pregunta_R2=mariposa_2
+            p.palabra_pregunta_R2=self.subsession.mariposa_2
         return p.palabra_pregunta_R2
 
     arrive_2=models.StringField()
@@ -485,17 +515,24 @@ class Group(BaseGroup):
         return [i_1, i_2, i_3, i_4], [self.puesto1_R2, self.puesto2_R2, self.puesto3_R2, self.puesto4_R2]
 
     def pp_2(self):
-        for player in self.get_players():
-            if player.id_in_group == self.puesto1_R2:
-                player.pay_2=player.total_score_R2*Constants.point
-            else:
-                player.pay_2=0
+        if self.treatment=='T1' or self.treatment=='T3':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R2:
+                    player.pay_2=player.total_score_R2*Constants.c_inc
+                else:
+                    player.pay_2=0
+        elif self.treatment=='C' or self.treatment=='T2':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R2:
+                    player.pay_2=player.total_score_R2*Constants.s_inc
+                else:
+                    player.pay_2=0
 
     ##para R3
     def pato_3(self):    
         players = self.get_players()
         for p in players: 
-            p.palabra_pregunta_R3=mariposa_3
+            p.palabra_pregunta_R3=self.subsession.mariposa_3
         return p.palabra_pregunta_R3 
     
     arrive_3=models.StringField()
@@ -551,17 +588,24 @@ class Group(BaseGroup):
         return [i_1, i_2, i_3, i_4], [self.puesto1_R3, self.puesto2_R3, self.puesto3_R3, self.puesto4_R3]
 
     def pp_3(self):
-        for player in self.get_players():
-            if player.id_in_group == self.puesto1_R3:
-                player.pay_3=player.total_score_R3*Constants.point
-            else:
-                player.pay_3=0
+        if self.treatment=='T1' or self.treatment=='T3':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R3:
+                    player.pay_3=player.total_score_R3*Constants.c_inc
+                else:
+                    player.pay_3=0
+        elif self.treatment=='C' or self.treatment=='T2':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R3:
+                    player.pay_3=player.total_score_R3*Constants.s_inc
+                else:
+                    player.pay_3=0
 
     ##para R4
     def pato_4(self):    
         players = self.get_players()
         for p in players: 
-            p.palabra_pregunta_R4=mariposa_4
+            p.palabra_pregunta_R4=self.subsession.mariposa_4
         return p.palabra_pregunta_R4 
     
     arrive_4=models.StringField()
@@ -617,11 +661,18 @@ class Group(BaseGroup):
         return [i_1, i_2, i_3, i_4], [self.puesto1_R4, self.puesto2_R4, self.puesto3_R4, self.puesto4_R4]
 
     def pp_4(self):
-        for player in self.get_players():
-            if player.id_in_group == self.puesto1_R4:
-                player.pay_4=player.total_score_R4*Constants.point
-            else:
-                player.pay_4=0
+        if self.treatment=='T1' or self.treatment=='T3':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R4:
+                    player.pay_4=player.total_score_R4*Constants.c_inc
+                else:
+                    player.pay_4=0
+        elif self.treatment=='C' or self.treatment=='T2':
+            for player in self.get_players():
+                if player.id_in_group == self.puesto1_R4:
+                    player.pay_4=player.total_score_R4*Constants.s_inc
+                else:
+                    player.pay_4=0
 
 class Player(BasePlayer):
     answer_1_p=models.StringField(blank=True)
@@ -704,7 +755,7 @@ class Player(BasePlayer):
         self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, 
         self.answer_24_R1, self.answer_25_R1]
 
-        if mariposa_1 == 'ARGENTINA':
+        if self.subsession.mariposa_1 == 'ARGENTINA':
             for x in respuestas:
                     if x in Constants.Word_list_ARGENTINA:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -712,7 +763,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1  
 
-        if mariposa_1 == 'EXPERIMENTO': 
+        if self.subsession.mariposa_1 == 'EXPERIMENTO': 
             for x in respuestas:
                     if x in Constants.Word_list_EXPERIMENTO:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -720,7 +771,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'CABALLITO': 
+        if self.subsession.mariposa_1 == 'CABALLITO': 
             for x in respuestas:
                     if x in Constants.Word_list_CABALLITO:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -728,7 +779,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'CASCABELES':
+        if self.subsession.mariposa_1 == 'CASCABELES':
             for x in respuestas:
                     if x in Constants.Word_list_CASCABELES:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -736,7 +787,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'HOLOCAUSTO': 
+        if self.subsession.mariposa_1 == 'HOLOCAUSTO': 
             for x in respuestas:
                     if x in Constants.Word_list_HOLOCAUSTO:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -744,7 +795,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'ELEFANTES': 
+        if self.subsession.mariposa_1 == 'ELEFANTES': 
             for x in respuestas:
                     if x in Constants.Word_list_ELEFANTES:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -752,7 +803,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'MANDARINA':
+        if self.subsession.mariposa_1 == 'MANDARINA':
             for x in respuestas:
                     if x in Constants.Word_list_MANDARINA:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -760,7 +811,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1 
 
-        if mariposa_1 == 'TELEPATÍA':
+        if self.subsession.mariposa_1 == 'TELEPATÍA':
             for x in respuestas:
                     if x in Constants.Word_list_TELEPATÍA:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -768,7 +819,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1
 
-        if mariposa_1 == 'COBARDÍA':
+        if self.subsession.mariposa_1 == 'COBARDÍA':
             for x in respuestas:
                     if x in Constants.Word_list_COBARDÍA:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -776,7 +827,7 @@ class Player(BasePlayer):
                         self.total_score_R1=self.total_score_R1
             return self.total_score_R1
 
-        if mariposa_1 == 'COMUNICACIÓN':
+        if self.subsession.mariposa_1 == 'COMUNICACIÓN':
             for x in respuestas:
                     if x in Constants.Word_list_COMUNICACIÓN:
                         self.total_score_R1=self.total_score_R1 + 1
@@ -824,7 +875,7 @@ class Player(BasePlayer):
         self.answer_18_R2, self.answer_19_R2, self.answer_20_R2, self.answer_21_R2, self.answer_22_R2, self.answer_23_R2, 
         self.answer_24_R2, self.answer_25_R2]
 
-        if mariposa_2 == 'ARGENTINA':
+        if self.subsession.mariposa_2 == 'ARGENTINA':
             for x in respuestas:
                     if x in Constants.Word_list_ARGENTINA:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -832,7 +883,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2  
 
-        if mariposa_2 == 'EXPERIMENTO': 
+        if self.subsession.mariposa_2 == 'EXPERIMENTO': 
             for x in respuestas:
                     if x in Constants.Word_list_EXPERIMENTO:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -840,7 +891,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'CABALLITO': 
+        if self.subsession.mariposa_2 == 'CABALLITO': 
             for x in respuestas:
                     if x in Constants.Word_list_CABALLITO:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -848,7 +899,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'CASCABELES':
+        if self.subsession.mariposa_2 == 'CASCABELES':
             for x in respuestas:
                     if x in Constants.Word_list_CASCABELES:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -856,7 +907,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'HOLOCAUSTO': 
+        if self.subsession.mariposa_2 == 'HOLOCAUSTO': 
             for x in respuestas:
                     if x in Constants.Word_list_HOLOCAUSTO:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -864,7 +915,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'ELEFANTES': 
+        if self.subsession.mariposa_2 == 'ELEFANTES': 
             for x in respuestas:
                     if x in Constants.Word_list_ELEFANTES:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -872,7 +923,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'MANDARINA':
+        if self.subsession.mariposa_2 == 'MANDARINA':
             for x in respuestas:
                     if x in Constants.Word_list_MANDARINA:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -880,7 +931,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2 
 
-        if mariposa_2 == 'TELEPATÍA':
+        if self.subsession.mariposa_2 == 'TELEPATÍA':
             for x in respuestas:
                     if x in Constants.Word_list_TELEPATÍA:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -888,7 +939,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2
 
-        if mariposa_2 == 'COBARDÍA':
+        if self.subsession.mariposa_2 == 'COBARDÍA':
             for x in respuestas:
                     if x in Constants.Word_list_COBARDÍA:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -896,7 +947,7 @@ class Player(BasePlayer):
                         self.total_score_R2=self.total_score_R2
             return self.total_score_R2
 
-        if mariposa_2 == 'COMUNICACIÓN':
+        if self.subsession.mariposa_2 == 'COMUNICACIÓN':
             for x in respuestas:
                     if x in Constants.Word_list_COMUNICACIÓN:
                         self.total_score_R2=self.total_score_R2 + 1
@@ -943,7 +994,7 @@ class Player(BasePlayer):
         self.answer_18_R3, self.answer_19_R3, self.answer_20_R3, self.answer_21_R3, self.answer_22_R3, self.answer_23_R3, 
         self.answer_24_R3, self.answer_25_R3]
 
-        if mariposa_3 == 'ARGENTINA':
+        if self.subsession.mariposa_3 == 'ARGENTINA':
             for x in respuestas:
                     if x in Constants.Word_list_ARGENTINA:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -951,7 +1002,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3  
 
-        if mariposa_3 == 'EXPERIMENTO': 
+        if self.subsession.mariposa_3 == 'EXPERIMENTO': 
             for x in respuestas:
                     if x in Constants.Word_list_EXPERIMENTO:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -959,7 +1010,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3
 
-        if mariposa_3 == 'CABALLITO': 
+        if self.subsession.mariposa_3 == 'CABALLITO': 
             for x in respuestas:
                     if x in Constants.Word_list_CABALLITO:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -967,7 +1018,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3 
 
-        if mariposa_3 == 'CASCABELES':
+        if self.subsession.mariposa_3 == 'CASCABELES':
             for x in respuestas:
                     if x in Constants.Word_list_CASCABELES:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -975,7 +1026,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3 
 
-        if mariposa_3 == 'HOLOCAUSTO': 
+        if self.subsession.mariposa_3 == 'HOLOCAUSTO': 
             for x in respuestas:
                     if x in Constants.Word_list_HOLOCAUSTO:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -983,7 +1034,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3 
 
-        if mariposa_3 == 'ELEFANTES': 
+        if self.subsession.mariposa_3 == 'ELEFANTES': 
             for x in respuestas:
                     if x in Constants.Word_list_ELEFANTES:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -991,7 +1042,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3 
 
-        if mariposa_3 == 'MANDARINA':
+        if self.subsession.mariposa_3 == 'MANDARINA':
             for x in respuestas:
                     if x in Constants.Word_list_MANDARINA:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -999,7 +1050,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3 
 
-        if mariposa_3 == 'TELEPATÍA':
+        if self.subsession.mariposa_3 == 'TELEPATÍA':
             for x in respuestas:
                     if x in Constants.Word_list_TELEPATÍA:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -1007,7 +1058,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3
 
-        if mariposa_3 == 'COBARDÍA':
+        if self.subsession.mariposa_3 == 'COBARDÍA':
             for x in respuestas:
                     if x in Constants.Word_list_COBARDÍA:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -1015,7 +1066,7 @@ class Player(BasePlayer):
                         self.total_score_R3=self.total_score_R3
             return self.total_score_R3
 
-        if mariposa_3 == 'COMUNICACIÓN':
+        if self.subsession.mariposa_3 == 'COMUNICACIÓN':
             for x in respuestas:
                     if x in Constants.Word_list_COMUNICACIÓN:
                         self.total_score_R3=self.total_score_R3 + 1
@@ -1062,7 +1113,7 @@ class Player(BasePlayer):
         self.answer_18_R4, self.answer_19_R4, self.answer_20_R4, self.answer_21_R4, self.answer_22_R4, self.answer_23_R4, 
         self.answer_24_R4, self.answer_25_R4]
 
-        if mariposa_4 == 'ARGENTINA':
+        if self.subsession.mariposa_4 == 'ARGENTINA':
             for x in respuestas:
                     if x in Constants.Word_list_ARGENTINA:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1070,7 +1121,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4  
 
-        if mariposa_4 == 'EXPERIMENTO': 
+        if self.subsession.mariposa_4 == 'EXPERIMENTO': 
             for x in respuestas:
                     if x in Constants.Word_list_EXPERIMENTO:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1078,7 +1129,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4
 
-        if mariposa_4 == 'CABALLITO': 
+        if self.subsession.mariposa_4 == 'CABALLITO': 
             for x in respuestas:
                     if x in Constants.Word_list_CABALLITO:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1086,7 +1137,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4 
 
-        if mariposa_4 == 'CASCABELES':
+        if self.subsession.mariposa_4 == 'CASCABELES':
             for x in respuestas:
                     if x in Constants.Word_list_CASCABELES:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1094,7 +1145,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4
 
-        if mariposa_4 == 'HOLOCAUSTO': 
+        if self.subsession.mariposa_4 == 'HOLOCAUSTO': 
             for x in respuestas:
                     if x in Constants.Word_list_HOLOCAUSTO:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1102,7 +1153,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4 
 
-        if mariposa_4 == 'ELEFANTES': 
+        if self.subsession.mariposa_4 == 'ELEFANTES': 
             for x in respuestas:
                     if x in Constants.Word_list_ELEFANTES:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1110,7 +1161,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4 
 
-        if mariposa_4 == 'MANDARINA':
+        if self.subsession.mariposa_4 == 'MANDARINA':
             for x in respuestas:
                     if x in Constants.Word_list_MANDARINA:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1118,7 +1169,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4 
 
-        if mariposa_4 == 'TELEPATÍA':
+        if self.subsession.mariposa_4 == 'TELEPATÍA':
             for x in respuestas:
                     if x in Constants.Word_list_TELEPATÍA:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1126,7 +1177,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4
 
-        if mariposa_4 == 'COBARDÍA':
+        if self.subsession.mariposa_4 == 'COBARDÍA':
             for x in respuestas:
                     if x in Constants.Word_list_COBARDÍA:
                         self.total_score_R4=self.total_score_R4 + 1
@@ -1134,7 +1185,7 @@ class Player(BasePlayer):
                         self.total_score_R4=self.total_score_R4
             return self.total_score_R4
 
-        if mariposa_4 == 'COMUNICACIÓN':
+        if self.subsession.mariposa_4 == 'COMUNICACIÓN':
             for x in respuestas:
                     if x in Constants.Word_list_COMUNICACIÓN:
                         self.total_score_R4=self.total_score_R4 + 1

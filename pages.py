@@ -13,6 +13,10 @@ class Reglas_generales(Page):
     pass
 
 class Introduccion(Page):
+    def is_displayed(self):
+        p1 = self.group.get_player_by_id(1)
+        Group.treatment = p1.participant.vars['treatment']
+        return self.round_number == 1
     def vars_for_template(self):
         code=self.player.id_code()       
         return dict(a=code)
@@ -52,9 +56,9 @@ class Ranking_verbal_p(Page):
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
 
     def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
+        #p1 = self.group.get_player_by_id(1)
+        #treatment = p1.participant.vars['treatment']
+        if Group.treatment=='C' or Group.treatment=='T1':
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
@@ -99,9 +103,9 @@ class Ranking_verbal_R1(Page):
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
     
     def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
+        #p1 = self.group.get_player_by_id(1)
+        #treatment = p1.participant.vars['treatment']
+        if Group.treatment=='C' or Group.treatment=='T1':
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
             self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
@@ -270,17 +274,17 @@ page_sequence = [
     Wait_1,
     Ranking_verbal_R1,
     pay_1,
-    Tarea_verbal_R2,
-    Wait_2,
-    Ranking_verbal_R2,
-    pay_2,
-    Tarea_verbal_R3,
-    Wait_3,
-    Ranking_verbal_R3,
-    pay_3,
-    Tarea_verbal_R4,
-    Wait_4,
-    Ranking_verbal_R4,
-    pay_4, 
+    #Tarea_verbal_R2,
+    #Wait_2,
+    #Ranking_verbal_R2,
+    #pay_2,
+    #Tarea_verbal_R3,
+    #Wait_3,
+    #Ranking_verbal_R3,
+    #pay_3,
+    #Tarea_verbal_R4,
+    #Wait_4,
+    #Ranking_verbal_R4,
+    #pay_4, 
     Cambio_app,
 ]
