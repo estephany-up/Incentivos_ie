@@ -19,7 +19,7 @@ class Introduccion(Page):
 
 class Instrucciones_verbal(Page):
     def before_next_page(self):
-        self.session.vars['expiry'] = time.time() + Constants.task_time_v_p
+        self.participant.vars['expiry'] = time.time() + Constants.task_time_v_p
 
 class Prueba_verbal(Page):
     timer_text = 'Tiempo que le falta para completar la ronda: '
@@ -55,9 +55,9 @@ class Ranking_verbal_p(Page):
         #p1 = self.group.get_player_by_id(1)
         #treatment = p1.participant.vars['treatment']
         if self.group.treatment=='C' or self.group.treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class Tarea_verbal_R1(Page):   
     if Group.treatment=='C' or Group.treatment=='T1':
@@ -74,7 +74,7 @@ class Tarea_verbal_R1(Page):
     'answer_24_R1','answer_25_R1']
 
     def get_timeout_seconds(self):
-        return self.session.vars['expiry'] - time.time()
+        return self.participant.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_1()
@@ -104,10 +104,10 @@ class Ranking_verbal_R1(Page):
     def before_next_page(self):
         #p1 = self.group.get_player_by_id(1)
         #treatment = p1.participant.vars['treatment']
-        if Group.treatment=='C' or Group.treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+        if self.group.treatment=='C' or self.group.treatment=='T1':
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class pay_1(WaitPage):
     after_all_players_arrive='pp_1'
@@ -127,7 +127,7 @@ class Tarea_verbal_R2(Page):
     'answer_24_R2','answer_25_R2']
 
     def get_timeout_seconds(self):
-        return self.session.vars['expiry'] - time.time()
+        return self.participant.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_2()
@@ -154,12 +154,12 @@ class Ranking_verbal_R2(Page):
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
     
     def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+        #p1 = self.group.get_player_by_id(1)
+        #treatment = p1.participant.vars['treatment']
+        if self.group.treatment=='C' or self.group.treatment=='T1':
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class pay_2(WaitPage):
     after_all_players_arrive='pp_2'
@@ -179,7 +179,7 @@ class Tarea_verbal_R3(Page):
     'answer_24_R3','answer_25_R3']
 
     def get_timeout_seconds(self):
-        return self.session.vars['expiry'] - time.time()
+        return self.participant.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_3()
@@ -206,12 +206,12 @@ class Ranking_verbal_R3(Page):
         pt_p1=pt_p1, pt_p2=pt_p2, pt_p3=pt_p3, pt_p4=pt_p4)
     
     def before_next_page(self):
-        p1 = self.group.get_player_by_id(1)
-        treatment = p1.participant.vars['treatment']
-        if treatment=='C' or treatment=='T1':
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_s
+        #p1 = self.group.get_player_by_id(1)
+        #treatment = p1.participant.vars['treatment']
+        if self.group.treatment=='C' or self.group.treatment=='T1':
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_s
         else:
-            self.session.vars['expiry'] = time.time() + Constants.task_time_v_t
+            self.participant.vars['expiry'] = time.time() + Constants.task_time_v_t
 
 class pay_3(WaitPage):
     after_all_players_arrive='pp_3'
@@ -231,7 +231,7 @@ class Tarea_verbal_R4(Page):
     'answer_24_R4','answer_25_R4']
 
     def get_timeout_seconds(self):
-        return self.session.vars['expiry'] - time.time()
+        return self.participant.vars['expiry'] - time.time()
 
     def vars_for_template(self): 
         a=self.group.pato_4()
@@ -282,17 +282,17 @@ page_sequence = [
     Wait_1,
     Ranking_verbal_R1,
     pay_1,
-    #Tarea_verbal_R2,
-    #Wait_2,
-    #Ranking_verbal_R2,
-    #pay_2,
-    #Tarea_verbal_R3,
-    #Wait_3,
-    #Ranking_verbal_R3,
-    #pay_3,
-    #Tarea_verbal_R4,
-    #Wait_4,
-    #Ranking_verbal_R4,
-    #pay_4, 
+    Tarea_verbal_R2,
+    Wait_2,
+    Ranking_verbal_R2,
+    pay_2,
+    Tarea_verbal_R3,
+    Wait_3,
+    Ranking_verbal_R3,
+    pay_3,
+    Tarea_verbal_R4,
+    Wait_4,
+    Ranking_verbal_R4,
+    pay_4, 
     Cambio_app,
 ]

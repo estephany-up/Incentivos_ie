@@ -298,13 +298,10 @@ def hola_2(subsession:Subsession):
             break
     return palabra_aleatoria
 #mariposa_2 = hola_2()
-
-###revisar el None, si sale la misma palabra -->while --> revisar para uno y si es que va, replicar 
+ 
 ##cambiar ID por label
 ##que no pase si es que está vacío -->correr esa parte (aun falta)
-##mostrar el pago --> revisar si es que funciona para ambas apps
-##RECORDAR QUE NO A TODOS LOS PARTICIOANTES SE LES PAGAN, SÓLO A LOS DEL TRATAMIENTO 1 Y 3
-######es decir, sólo a esos grupos se les paga 0.20 por pregunta, o sino 0
+
 def hola_3(subsession:Subsession): 
     palabra_aleatoria = models.CharField(initial='')
     palabra_aleatoria= random.choice(Constants.Word_list_preguntas)
@@ -327,7 +324,7 @@ def hola_4(subsession:Subsession):
 
   
 class Group(BaseGroup):
-    treatment=models.CharField()
+    treatment=models.StringField()
 
     arrive_p=models.StringField()
 
