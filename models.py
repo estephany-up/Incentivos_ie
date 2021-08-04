@@ -124,21 +124,23 @@ class Constants(BaseConstants):
     'raen', 'raía', 'rain', 'rana', 'rata', 'reía', 'reta', 'rian', 'rien', 'rita', 'rite', 'tara', 'taré', 'tena', 'tina', 
     'tira', 'tiré', 'trae', 'tren', 'tría', 'trie']
 
-    Word_list_CABALLITO = ['baticola', 'báltica', 'báltico', 'coitaba', 'acolita', 'alicato', 'argentan', 'altaico', 'alcoba', 
+    Word_list_CABALLITO = ['atabillo','baticola', 'caobilla', 'báltica', 'báltico', 'coitaba', 'acolita', 'alicato', 'argentan', 'altaico',
+    'bacillo', 'batallo', 'botilla', 'caballo', 'cabilla', 'cabillo', 'cotilla', 'otilaba', 'tabilla', 'tillaba', 'toballa', 
+    'alcoba', 'abolla', 'acallo', 'acolla', 'albalo', 'albita', 'atablo', 'atolla', 'callao', 'lloica', 'toalla',
     'bacilo', 'biloca', 'bocata', 'botica', 'cabalo', 'cabila', 'cálibo', 'citaba', 'colaba', 'cotaba', 'ociaba', 'tabaco', 
     'tabica', 'tabico', 'tocaba', 'abatió', 'abolía', 'alacio', 'albita', 'álcali', 'atablo', 'balita', 'balito', 'balota', 
     'batial', 'batola', 'bolita', 'calato', 'coaita', 'coital', 'colita', 'cotila', 'labial', 'laical', 'litaba', 'locata', 
-    'oblata', 'tablao', 'ábaco', 'aboca', 'acabo', 'bacía', 'bical', 'bloca', 'bocal', 'cabal', 'cabía', 'cabió', 'caoba', 
+    'oblata', 'tablao', 'ábaco', 'aboca', 'acabo', 'acabó', 'bacía', 'bical', 'bloca', 'bocal', 'cabal', 'cabía', 'cabió', 'caoba', 
     'ciaba', 'cibal', 'cobil', 'cobla', 'abatí', 'abato', 'abita', 'abito', 'abolí', 'acato', 'acial', 'acilo', 'acola', 
     'acota', 'alabo', 'álica', 'aloca', 'atacó', 'atiba', 'atibó', 'ática', 'ático', 'atoba', 'baila', 'bailo', 'balta', 
     'balto', 'batía', 'batió', 'bilao', 'biota', 'cálao', 'calta', 'ciato', 'clota', 'coita', 'coatí', 'labia', 'lábil', 
     'labio', 'lacia', 'lacio', 'lacta', 'lacto', 'laica', 'laico', 'liaba', 'loaba', 'local', 'loica', 'tabal', 'tabla', 
-    'talco', 'tiaca', 'tlaco', 'toaba', 'tocia', 'alola', 'alota', 'ilota', 'latía', 'latió', 'lilao', 'otila', 'talio', 'baca', 
+    'talco', 'tiaca', 'tlaco', 'toaba', 'tocia', 'alola', 'alota', 'ilota', 'latía', 'latió', 'lilao', 'otila', 'talio', 'tolla','baca', 
     'bloc', 'boca', 'cabo', 'cibo', 'coba', 'acal', 'acta', 'acto', 'alba', 'albo', 'alca', 'bala', 'balo', 'bata', 'batí', 'bato', 
     'bita', 'bito', 'bola', 'bota', 'caía', 'cala', 'calo', 'cata', 'cato', 'cita', 'cito', 'cola', 'cota', 'cotí', 'laca', 'laco', 
     'liba', 'libo', 'loba', 'loca', 'ocal', 'ocia', 'taba', 'tabí', 'tabo', 'taca', 'taco', 'tico', 'toba', 'toca', 'alía', 'alío', 
     'alta', 'alto', 'atoa', 'atol', 'iota', 'lata', 'latí', 'lato', 'lila', 'lita', 'lito', 'lota', 'olía', 'tala', 'talo', 'taló', 
-    'tilo', 'tola']
+    'tilo', 'tila', 'tola']
 
     Word_list_CASCABELES = ['cableases', 'cabeceas', 'cascabel', 'ceceabas', 'balacees', 'cablease', 'caseases', 'calacees', 
     'calcases', 'calceses', 'sebáceas', 'albeases', 'baleases', 'balsease', 'escalase', 'laceases', 'leseabas', 'sablease', 
@@ -697,14 +699,26 @@ class Player(BasePlayer):
     answer_23_p=models.StringField(blank=True)
     answer_24_p=models.StringField(blank=True)
     answer_25_p=models.StringField(blank=True)
+    answer_26_p=models.StringField(blank=True)
+    answer_27_p=models.StringField(blank=True)
+    answer_28_p=models.StringField(blank=True)
+    answer_29_p=models.StringField(blank=True)
+    answer_30_p=models.StringField(blank=True)
 
     total_score_p=models.IntegerField(initial=0)
 
     def puntaje_p(self): 
-        respuestas = [self.answer_1_p, self.answer_2_p, self.answer_3_p, self.answer_4_p, self.answer_5_p, self.answer_6_p, 
+        rp = [self.answer_1_p, self.answer_2_p, self.answer_3_p, self.answer_4_p, self.answer_5_p, self.answer_6_p, 
         self.answer_7_p, self.answer_8_p, self.answer_9_p, self.answer_10_p, self.answer_11_p, self.answer_12_p, self.answer_13_p, 
         self.answer_14_p, self.answer_15_p, self.answer_16_p, self.answer_17_p, self.answer_18_p, self.answer_19_p, self.answer_20_p, 
-        self.answer_21_p, self.answer_22_p, self.answer_23_p, self.answer_24_p, self.answer_25_p]   
+        self.answer_21_p, self.answer_22_p, self.answer_23_p, self.answer_24_p, self.answer_25_p, self.answer_26_p, self.answer_27_p, 
+        self.answer_28_p, self.answer_29_p, self.answer_30_p] 
+
+        respuestas=[]  
+
+        for i in rp:
+            if i not in respuestas:
+                respuestas.append(i)
            
         for x in respuestas:
             if x in Constants.Word_list_ALEATORIO:
@@ -739,6 +753,11 @@ class Player(BasePlayer):
     answer_23_R1=models.StringField(blank=True)
     answer_24_R1=models.StringField(blank=True)
     answer_25_R1=models.StringField(blank=True)
+    answer_26_R1=models.StringField(blank=True)
+    answer_27_R1=models.StringField(blank=True)
+    answer_28_R1=models.StringField(blank=True)
+    answer_29_R1=models.StringField(blank=True)
+    answer_30_R1=models.StringField(blank=True)
 
     total_score_R1=models.IntegerField(initial=0)
 
@@ -746,11 +765,18 @@ class Player(BasePlayer):
 
     def puntaje_R1(self):    
         
-        respuestas = [self.answer_1_R1, self.answer_2_R1, self.answer_3_R1, self.answer_4_R1, self.answer_5_R1, 
+        rp = [self.answer_1_R1, self.answer_2_R1, self.answer_3_R1, self.answer_4_R1, self.answer_5_R1, 
         self.answer_6_R1, self.answer_7_R1, self.answer_8_R1, self.answer_9_R1, self.answer_10_R1, self.answer_11_R1, 
         self.answer_12_R1, self.answer_13_R1, self.answer_14_R1, self.answer_15_R1, self.answer_16_R1, self.answer_17_R1, 
         self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, 
-        self.answer_24_R1, self.answer_25_R1]
+        self.answer_24_R1, self.answer_25_R1, self.answer_26_R1, self.answer_27_R1, self.answer_28_R1, self.answer_29_R1, 
+        self.answer_30_R1]
+
+        respuestas=[]  
+
+        for i in rp:
+            if i not in respuestas:
+                respuestas.append(i)
 
         if self.subsession.mariposa_1 == 'ARGENTINA':
             for x in respuestas:
@@ -859,6 +885,11 @@ class Player(BasePlayer):
     answer_23_R2=models.StringField(blank=True)
     answer_24_R2=models.StringField(blank=True)
     answer_25_R2=models.StringField(blank=True)
+    answer_26_R2=models.StringField(blank=True)
+    answer_27_R2=models.StringField(blank=True)
+    answer_28_R2=models.StringField(blank=True)
+    answer_29_R2=models.StringField(blank=True)
+    answer_30_R2=models.StringField(blank=True)
 
     total_score_R2=models.IntegerField(initial=0)
 
@@ -866,11 +897,18 @@ class Player(BasePlayer):
 
     def puntaje_R2(self):    
         
-        respuestas = [self.answer_1_R2, self.answer_2_R2, self.answer_3_R2, self.answer_4_R2, self.answer_5_R2, 
+        rp = [self.answer_1_R2, self.answer_2_R2, self.answer_3_R2, self.answer_4_R2, self.answer_5_R2, 
         self.answer_6_R2, self.answer_7_R2, self.answer_8_R2, self.answer_9_R2, self.answer_10_R2, self.answer_11_R2, 
         self.answer_12_R2, self.answer_13_R2, self.answer_14_R2, self.answer_15_R2, self.answer_16_R2, self.answer_17_R2, 
         self.answer_18_R2, self.answer_19_R2, self.answer_20_R2, self.answer_21_R2, self.answer_22_R2, self.answer_23_R2, 
-        self.answer_24_R2, self.answer_25_R2]
+        self.answer_24_R2, self.answer_25_R2, self.answer_26_R2, self.answer_27_R2, self.answer_28_R2, self.answer_29_R2, 
+        self.answer_30_R2]
+
+        respuestas=[]  
+
+        for i in rp:
+            if i not in respuestas:
+                respuestas.append(i)
 
         if self.subsession.mariposa_2 == 'ARGENTINA':
             for x in respuestas:
@@ -978,6 +1016,11 @@ class Player(BasePlayer):
     answer_23_R3=models.StringField(blank=True)
     answer_24_R3=models.StringField(blank=True)
     answer_25_R3=models.StringField(blank=True)
+    answer_26_R3=models.StringField(blank=True)
+    answer_27_R3=models.StringField(blank=True)
+    answer_28_R3=models.StringField(blank=True)
+    answer_29_R3=models.StringField(blank=True)
+    answer_30_R3=models.StringField(blank=True)
 
     total_score_R3=models.IntegerField(initial=0)
 
@@ -985,11 +1028,18 @@ class Player(BasePlayer):
 
     def puntaje_R3(self):    
         
-        respuestas = [self.answer_1_R3, self.answer_2_R3, self.answer_3_R3, self.answer_4_R3, self.answer_5_R3, 
+        rp = [self.answer_1_R3, self.answer_2_R3, self.answer_3_R3, self.answer_4_R3, self.answer_5_R3, 
         self.answer_6_R3, self.answer_7_R3, self.answer_8_R3, self.answer_9_R3, self.answer_10_R3, self.answer_11_R3, 
         self.answer_12_R3, self.answer_13_R3, self.answer_14_R3, self.answer_15_R3, self.answer_16_R3, self.answer_17_R3, 
         self.answer_18_R3, self.answer_19_R3, self.answer_20_R3, self.answer_21_R3, self.answer_22_R3, self.answer_23_R3, 
-        self.answer_24_R3, self.answer_25_R3]
+        self.answer_24_R3, self.answer_25_R3, self.answer_26_R3, self.answer_27_R3, self.answer_28_R3, 
+        self.answer_29_R3, self.answer_30_R3]
+
+        respuestas=[]  
+
+        for i in rp:
+            if i not in respuestas:
+                respuestas.append(i)
 
         if self.subsession.mariposa_3 == 'ARGENTINA':
             for x in respuestas:
@@ -1097,6 +1147,11 @@ class Player(BasePlayer):
     answer_23_R4=models.StringField(blank=True)
     answer_24_R4=models.StringField(blank=True)
     answer_25_R4=models.StringField(blank=True)
+    answer_26_R4=models.StringField(blank=True)
+    answer_27_R4=models.StringField(blank=True)
+    answer_28_R4=models.StringField(blank=True)
+    answer_29_R4=models.StringField(blank=True)
+    answer_30_R4=models.StringField(blank=True)
 
     total_score_R4=models.IntegerField(initial=0)
 
@@ -1104,11 +1159,18 @@ class Player(BasePlayer):
 
     def puntaje_R4(self):    
         
-        respuestas = [self.answer_1_R4, self.answer_2_R4, self.answer_3_R4, self.answer_4_R4, self.answer_5_R4, 
+        rp = [self.answer_1_R4, self.answer_2_R4, self.answer_3_R4, self.answer_4_R4, self.answer_5_R4, 
         self.answer_6_R4, self.answer_7_R4, self.answer_8_R4, self.answer_9_R4, self.answer_10_R4, self.answer_11_R4, 
         self.answer_12_R4, self.answer_13_R4, self.answer_14_R4, self.answer_15_R4, self.answer_16_R4, self.answer_17_R4, 
         self.answer_18_R4, self.answer_19_R4, self.answer_20_R4, self.answer_21_R4, self.answer_22_R4, self.answer_23_R4, 
-        self.answer_24_R4, self.answer_25_R4]
+        self.answer_24_R4, self.answer_25_R4, self.answer_26_R4, self.answer_27_R4, self.answer_28_R4, 
+        self.answer_29_R4, self.answer_30_R4]
+
+        respuestas=[]  
+
+        for i in rp:
+            if i not in respuestas:
+                respuestas.append(i)
 
         if self.subsession.mariposa_4 == 'ARGENTINA':
             for x in respuestas:

@@ -29,7 +29,7 @@ class Prueba_verbal(Page):
     form_fields=['answer_1_p','answer_2_p','answer_3_p','answer_4_p','answer_5_p','answer_6_p','answer_7_p',
     'answer_8_p','answer_9_p','answer_10_p','answer_11_p','answer_12_p','answer_13_p','answer_14_p','answer_15_p',
     'answer_16_p','answer_17_p','answer_18_p','answer_19_p','answer_20_p','answer_21_p','answer_22_p','answer_23_p',
-    'answer_24_p','answer_25_p']
+    'answer_24_p','answer_25_p', 'answer_26_p','answer_27_p','answer_28_p', 'answer_29_p','answer_30_p']
     
     def before_next_page(self):
         self.player.puntaje_p()
@@ -71,7 +71,7 @@ class Tarea_verbal_R1(Page):
     form_fields=['answer_1_R1','answer_2_R1','answer_3_R1','answer_4_R1','answer_5_R1','answer_6_R1','answer_7_R1',
     'answer_8_R1','answer_9_R1','answer_10_R1','answer_11_R1','answer_12_R1','answer_13_R1','answer_14_R1','answer_15_R1',
     'answer_16_R1','answer_17_R1','answer_18_R1','answer_19_R1','answer_20_R1','answer_21_R1','answer_22_R1','answer_23_R1',
-    'answer_24_R1','answer_25_R1']
+    'answer_24_R1','answer_25_R1', 'answer_26_R1','answer_27_R1','answer_28_R1', 'answer_29_R1','answer_30_R1']
 
     def get_timeout_seconds(self):
         return self.participant.vars['expiry'] - time.time()
@@ -124,7 +124,7 @@ class Tarea_verbal_R2(Page):
     form_fields=['answer_1_R2','answer_2_R2','answer_3_R2','answer_4_R2','answer_5_R2','answer_6_R2','answer_7_R2',
     'answer_8_R2','answer_9_R2','answer_10_R2','answer_11_R2','answer_12_R2','answer_13_R2','answer_14_R2','answer_15_R2',
     'answer_16_R2','answer_17_R2','answer_18_R2','answer_19_R2','answer_20_R2','answer_21_R2','answer_22_R2','answer_23_R2',
-    'answer_24_R2','answer_25_R2']
+    'answer_24_R2','answer_25_R2', 'answer_26_R2','answer_27_R2','answer_28_R2', 'answer_29_R2','answer_30_R2']
 
     def get_timeout_seconds(self):
         return self.participant.vars['expiry'] - time.time()
@@ -176,7 +176,7 @@ class Tarea_verbal_R3(Page):
     form_fields=['answer_1_R3','answer_2_R3','answer_3_R3','answer_4_R3','answer_5_R3','answer_6_R3','answer_7_R3',
     'answer_8_R3','answer_9_R3','answer_10_R3','answer_11_R3','answer_12_R3','answer_13_R3','answer_14_R3','answer_15_R3',
     'answer_16_R3','answer_17_R3','answer_18_R3','answer_19_R3','answer_20_R3','answer_21_R3','answer_22_R3','answer_23_R3',
-    'answer_24_R3','answer_25_R3']
+    'answer_24_R3','answer_25_R3', 'answer_26_R3','answer_27_R3','answer_28_R3', 'answer_29_R3','answer_30_R3']
 
     def get_timeout_seconds(self):
         return self.participant.vars['expiry'] - time.time()
@@ -228,7 +228,7 @@ class Tarea_verbal_R4(Page):
     form_fields=['answer_1_R4','answer_2_R4','answer_3_R4','answer_4_R4','answer_5_R4','answer_6_R4','answer_7_R4',
     'answer_8_R4','answer_9_R4','answer_10_R4','answer_11_R4','answer_12_R4','answer_13_R4','answer_14_R4','answer_15_R4',
     'answer_16_R4','answer_17_R4','answer_18_R4','answer_19_R4','answer_20_R4','answer_21_R4','answer_22_R4','answer_23_R4',
-    'answer_24_R4','answer_25_R4']
+    'answer_24_R4','answer_25_R4', 'answer_26_R4','answer_27_R4','answer_28_R4', 'answer_29_R4','answer_30_R4']
 
     def get_timeout_seconds(self):
         return self.participant.vars['expiry'] - time.time()
@@ -282,17 +282,17 @@ page_sequence = [
     Wait_1,
     Ranking_verbal_R1,
     pay_1,
-    Tarea_verbal_R2,
-    Wait_2,
-    Ranking_verbal_R2,
-    pay_2,
-    Tarea_verbal_R3,
-    Wait_3,
-    Ranking_verbal_R3,
-    pay_3,
-    Tarea_verbal_R4,
-    Wait_4,
-    Ranking_verbal_R4,
-    pay_4, 
+    #Tarea_verbal_R2,
+    #Wait_2,
+    #Ranking_verbal_R2,
+    #pay_2,
+    #Tarea_verbal_R3,
+    #Wait_3,
+    #Ranking_verbal_R3,
+    #pay_3,
+    #Tarea_verbal_R4,
+    #Wait_4,
+    #Ranking_verbal_R4,
+    #pay_4, 
     Cambio_app,
 ]
