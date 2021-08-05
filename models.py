@@ -57,44 +57,46 @@ class Constants(BaseConstants):
     'tara', 'tare', 'taro', 'tela', 'tila', 'tile', 'tilo', 'tira', 'tiré', 'tiro', 'toar', 'tola', 'tole', 'tora', 
     'toro', 'trae', 'treo', 'tría', 'trié', 'trío', 'trol']
 
-    Word_list_EXPERIMENTO = ['exterminé', 'extermine', 'extermino','exterminó', 'inexperto', 'pimentero', 'rompiente', 
+    Word_list_EXPERIMENTO = ['exterminé', 'extermine', 'extermino', 'exterminó', 'inexperto', 'pimentero', 'rompiente', 
     'peinetero', 'exprimen', 'eximente', 'exporten', 'extirpen', 'extremen', 'emétrope', 'empeoren', 'empitone', 'empotren', 
     'epitomen', 'impetren', 'importen', 'permiten', 'prometen', 'temperen', 'temperie', 'trompeen', 'menorete', 'metieren', 
     'metieron', 'moreteen', 'temieren', 'temieron', 'exprime', 'exprimo', 'experto', 'expiren', 'exponer', 'exporte', 
-    'extirpe', 'extirpo', 'extremo', 'exonere', 'externe', 'externo', 'extorne', 'empeine', 'empente', 'empento', 'empeore', 
-    'emperne', 'emperno', 'empetro', 'empíreo', 'emporen', 'empoten', 'empotre', 'epímone', 'epítome', 'imperen', 'impetre', 
-    'impetro', 'imponer', 'importe', 'menipeo', 'oprimen', 'optimen', 'perimen', 'permeen', 'permite', 'permito', 'premien', 
-    'primeen', 'promete', 'prometí', 'tempere', 'tempero', 'trompee', 'trompen', 'emérito', 'entripe', 'entripo', 'mentiré', 
-    'meriten', 'metiere', 'moretee', 'peinero', 'penetre', 'penetro', 'pereion', 'perineo', 'periten', 'pernote', 'porteen', 
-    'potreen', 'prenote', 'remeneo', 'remeten', 'remetió', 'remiten', 'remonte', 'repeine', 'repeine', 'repeino', 'repente', 
-    'repinte', 'repinto', 'repito', 'retomen', 'temiere', 'termine', 'termino', 'terpeno', 'timonee', 'entreoí', 'oriente', 
-    'retiene', 'tironee', 'eximen', 'expíen', 'expire', 'expiro', 'expone', 'pixtón', 'exente', 'exento', 'exoren', 'exorne', 
-    'empero', 'empine', 'empino', 'empore', 'empote', 'impere', 'impero', 'ímpeto', 'impone', 'oprime', 'optimé', 'perime', 
-    'perimo', 'permee', 'permeo', 'premié', 'premio', 'primee', 'primen', 'primeo', 'rompe', 'tiempo', 'trompe', 'emiten', 
-    'enmote', 'enorme', 'enrome', 'etíope', 'inepto', 'inerme', 'mentir', 'mentor', 'merino', 'merito', 'meteré', 'miente', 
-    'miento', 'minero', 'minore', 'mitren', 'monteé', 'morete', 'moteen', 'nepote', 'omiten', 'operen', 'perene', 'pereto', 
-    'periné', 'perite', 'perito', 'pernee', 'perneo', 'pernio', 'peroné', 'perote', 'pétreo', 'pinero', 'pintee', 'pinteo', 
-    'pintor', 'piteen', 'pitero', 'pitreo', 'ponteé', 'porteé', 'porten', 'potreé', 'prieto', 'remete', 'remtí', 'remeto', 
-    'remite', 'remito', 'repetí', 'repine', 'repino', 'repite', 'repito', 'repone', 'repten', 'retome', 'riepto', 'ritmen', 
-    'temeré', 'topeen', 'tremen', 'tremió', 'trepen', 'tripón', 'enteré', 'entero', 'entore', 'etéreo', 'eterno', 'inerte', 
-    'iteren', 'norteé', 'retiné', 'retino', 'tierno', 'toreen', 'torneé', 'trineo', 'epoxi', 'exime', 'eximo', 'expíe', 
-    'expío', 'expón', 'mixto', 'éxit', 'exoré', 'nixte', 'oxeen', 'impón', 'miope', 'pemón', 'primé', 'primo', 'rompe', 'rompí', 
-    'tiempo', 'emite', 'emito', 'étimo', 'inope', 'meneé', 'meneo', 'menor', 'mente', 'mentí', 'mento', 'meren', 'meten', 
-    'meter', 'metió', 'metro', 'miren', 'mirón', 'mirto', 'mitón', 'mitré', 'mitró', 'moneé', 'monte', 'moren', 'moteé', 
-    'motín', 'nemeo', 'normé', 'ominé', 'omite', 'opere', 'opine', 'opten', 'peeré', 'peine', 'peino', 'perno', 'peten', 
-    'pinté', 'pinto', 'piren', 'pirón', 'piteo', 'pitón', 'poner', 'porte', 'poten', 'prion', 'remen', 'repón', 'repte', 
-    'repto', 'rimen', 'ritmo', 'romín', 'temen', 'temer', 'temió', 'temor', 'termo', 'timen', 'timón', 'tomen', 'tomín', 
-    'topeé', 'topen', 'torpe', 'treme', 'tremí', 'tremó', 'trepé', 'trepo', 'tripe', 'enero', 'enríe', 'enrío', 'enteo', 
-    'entré', 'entro', 'etneo', 'itere', 'itero', 'nieto', 'nitor', 'nitré', 'nitro', 'norte', 'oreen', 'orine', 'oteen', 
-    'reine', 'reino', 'renio', 'rente', 'rento', 'retén', 'retín', 'ritón', 'roete', 'roten', 'tener', 'tenío', 'tenor', 
-    'terne', 'terno', 'tiene', 'tiren', 'tirón', 'tóner', 'toreé', 'torne', 'treno', 'tríen', 'triné', 'trino', 'trone', 
-    'exir', 'nexo', 'ónix', 'oxeé', 'oxte', 'emir', 'ítem', 'meen', 'mene', 'meno', 'mero', 'mete', 'metí', 'meto', 'míen', 
-    'miné', 'mino', 'miré', 'miro', 'mito', 'moer', 'moré', 'morí', 'mote', 'neme', 'nepe', 'nome', 'opté', 'peer', 'peen', 
-    'pene', 'peni', 'peno', 'peón', 'peor', 'peri', 'pero', 'peté', 'peto', 'píen', 'pino', 'pion', 'piré', 'piro', 'pite', 
-    'pito', 'pone', 'poni', 'pote', 'reme', 'remo', 'repo', 'rimé', 'rimo', 'romí', 'teme', 'temí', 'temo', 'tepe', 'timé', 
-    'timo', 'tipo', 'tomé', 'topé', 'éneo', 'ente', 'eren', 'éter', 'neto', 'nito', 'noté', 'oiré', 'oreé', 'oren', 'orín', 
-    'orné', 'oteé', 'otre', 'rene', 'reno', 'reté', 'retó', 'ríen', 'rite', 'rito', 'roen', 'rote', 'tené', 'tino', 'tiré', 
-    'tiro', 'toen', 'toné', 'tren', 'treo', 'trié', 'trío']
+    'exporté', 'extirpe', 'extirpo', 'extirpó', 'extremo', 'exonere', 'exoneré', 'externe', 'externé', 'externo', 'externó', 
+    'extorne', 'extorné', 'empeine', 'empente', 'empento', 'empeore', 'empeoré', 'emperne', 'emperno', 'empetro', 'empíreo', 
+    'emporen', 'empoten', 'empotre', 'epímone', 'epítome', 'imperen', 'impetre', 'impetro', 'imponer', 'importe', 'menipeo', 
+    'oprimen', 'optimen', 'perimen', 'permeen', 'permite', 'permito', 'premien', 'primeen', 'promete', 'prometí', 'tempere', 
+    'tempero', 'trompee', 'trompen', 'emérito', 'entripe', 'entripo', 'mentiré', 'meriten', 'metiere', 'moretee', 'moreteé', 
+    'peinero', 'penetre', 'penetro', 'pereion', 'perineo', 'periten', 'pernote', 'porteen', 'potreen', 'prenote', 'remeneo', 
+    'remeten', 'remetió', 'remiten', 'remonte', 'repeine', 'repeine', 'repeino', 'repente', 'repinte', 'repinto', 'repito', 
+    'retomen', 'temiere', 'termine', 'termino', 'terpeno', 'timonee', 'entreoí', 'oriente', 'retiene', 'terminé', 'tironee', 
+    'tironeé', 'eximen', 'expíen', 'expire', 'expiro', 'expiró', 'expone', 'pixtón', 'exente', 'exento', 'exoren', 'exorne', 
+    'empero', 'empine', 'empino', 'empore', 'empote', 'impere', 'impero', 'ímpeto', 'impone', 'oprime', 'optimé', 'optime', 
+    'perime', 'perimo', 'permee', 'permeé', 'permeo', 'permeó', 'premié', 'premie', 'premio', 'primee', 'primen', 'primeo', 
+    'tiempo', 'trompe', 'emiten', 'enmote', 'enorme', 'enrome', 'etíope', 'inepto', 'inerme', 'mentir', 'mentor', 'merino', 
+    'merito', 'mérito', 'meteré', 'miente', 'miento', 'minero', 'minore', 'mitren', 'monteé', 'morete', 'moteen', 'nepote', 
+    'omiten', 'operen', 'perene', 'pereto', 'periné', 'perite', 'perito', 'pernee', 'perneo', 'pernio', 'peroné', 'perote', 
+    'pétreo', 'pinero', 'pintee', 'pinteo', 'pintor', 'piteen', 'pitero', 'pitreo', 'ponteé', 'porteé', 'porten', 'potreé', 
+    'prieto', 'remete', 'remití', 'remeto', 'remite', 'remito', 'repetí', 'repine', 'repino', 'repite', 'repito', 'repone', 
+    'repten', 'retome', 'riepto', 'ritmen', 'temeré', 'topeen', 'tremen', 'tremió', 'trepen', 'tripón', 'enteré', 'entero', 
+    'entore', 'etéreo', 'eterno', 'inerte', 'iteren', 'norteé', 'retiné', 'retino', 'tierno', 'toreen', 'torneé', 'trineo', 
+    'epoxi', 'exime', 'eximo', 'expíe', 'expío', 'expón', 'mixto', 'éxito', 'exoré', 'nixte', 'oxeen', 'impón', 'miope', 
+    'pemón', 'primé', 'primo', 'rompe', 'rompí', 'tiempo', 'emite', 'emito', 'étimo', 'inope', 'meneé', 'meneo', 'menor', 
+    'mente', 'mentí', 'mentó', 'meren', 'meten', 'meter', 'metió', 'metro', 'miren', 'mirón', 'mirto', 'mitón', 'mitré', 
+    'mitró', 'moneé', 'monte', 'moren', 'moteé', 'motín', 'nemeo', 'normé', 'ominé', 'omite', 'opere', 'opine', 'opten', 
+    'peeré', 'peine', 'peino', 'perno', 'peten', 'pinté', 'pinto', 'piren', 'pirón', 'piteo', 'pitón', 'poner', 'porte', 
+    'poten', 'prion', 'remen', 'repón', 'repte', 'repto', 'rimen', 'ritmo', 'romín', 'temen', 'temer', 'temió', 'temor', 
+    'termo', 'timen', 'timón', 'tomen', 'tomín', 'topeé', 'topen', 'torpe', 'treme', 'tremí', 'tremó', 'trepé', 'trepo', 
+    'tripe', 'enero', 'enríe', 'enrío', 'enteo', 'entré', 'entro', 'etneo', 'itere', 'itero', 'nieto', 'nitor', 'nitré', 
+    'nitro', 'norte', 'oreen', 'orine', 'oteen', 'reine', 'reino', 'renio', 'rente', 'rento', 'retén', 'retín', 'ritón', 
+    'roete', 'roten', 'tener', 'tenío', 'tenor', 'terne', 'terno', 'tiene', 'tiren', 'tirón', 'tóner', 'toreé', 'torne', 
+    'treno', 'tríen', 'triné', 'trino', 'troné', 'exir', 'nexo', 'ónix', 'oxeé', 'oxte', 'emir', 'ítem', 'meen', 'mene', 
+    'meno', 'mero', 'mete', 'metí', 'meto', 'míen', 'miné', 'mino', 'miré', 'mire', 'miro', 'mito', 'moer', 'moré', 'morí', 
+    'mote', 'neme', 'nepe', 'nome', 'opté', 'opte', 'peer', 'peen', 'pene', 'peni', 'peno', 'peón', 'peor', 'peri', 'pero', 
+    'peté', 'peto', 'píen', 'pino', 'pion', 'piré', 'pire', 'piro', 'pite', 'pito', 'pone', 'poni', 'pote', 'reme', 'remo', 
+    'repo', 'rimé', 'rimo', 'romí', 'teme', 'temí', 'temo', 'tepe', 'timé', 'timo', 'tipo', 'tomé', 'topé', 'éneo', 'ente', 
+    'eren', 'éter', 'neto', 'nito', 'noté', 'oiré', 'oreé', 'oren', 'orín', 'orné', 'oteé', 'otre', 'rene', 'reno', 'reté', 
+    'retó', 'reto', 'ríen', 'rite', 'rito', 'roen', 'rote', 'roté', 'tino', 'tiré', 'tiro', 'toen', 'toné', 'tren', 'treo', 
+    'trié', 'trío']
 
     Word_list_ARGENTINA = ['engaritan', 'tangerina', 'tangieran', 'agitanen', 'agitaren', 'agrietan', 'argentan', 'engaitan', 
     'engaitar', 'engarita', 'garanten', 'gitanean', 'gitanear', 'granatín', 'gratinan', 'gratinen', 'integran', 'negarían', 
@@ -110,89 +112,93 @@ class Constants(BaseConstants):
     'tangir', 'tengan', 'tigana', 'tragan', 'traiga', 'airean', 'antena', 'antera', 'arenan', 'artina', 'ataire', 'ataren', 
     'atenía', 'atería', 'atinan', 'atinar', 'atinen', 'atraen', 'enatía', 'enrían', 'entina', 'entran', 'etaria', 'innata', 
     'iteran', 'nantar', 'narina', 'nitran', 'nitren', 'ranita', 'ratean', 'ratina', 'ratine', 'reatan', 'reinan', 'renana', 
-    'rentan', 'retina', 'tarina', 'tenían', 'tierna', 'tirana', 'traían', 'trinan', 'trinen', 'agita', 'agite', 'agria', 
-    'agríe', 'anega', 'angra', 'argán', 'argén', 'gaita', 'ganan', 'ganar', 'ganen', 'ganta', 'gante', 'gatea', 'ginea', 
-    'giren', 'giran', 'grana', 'grané', 'grata', 'graté', 'grita', 'grité', 'ígnea', 'irgan', 'negar', 'negra', 'niega', 
-    'raiga', 'regia', 'renga', 'riega', 'rigen', 'ringa', 'taiga', 'tanga', 'tange', 'tangí', 'tenga', 'tigre', 'tinge', 
-    'traga', 'airan', 'airea', 'airen', 'anear', 'arena', 'ataré', 'atear', 'aterí', 'atina', 'atiné', 'atrae', 'enana', 
-    'enría', 'entra', 'erina', 'étnia', 'inane', 'itera', 'naire', 'nanea', 'nanta', 'natía', 'natri', 'nenia', 'niara', 
-    'nieta', 'nitra', 'nitré', 'raían', 'ratea', 'reata', 'reían', 'reina', 'renta', 'retan', 'retín', 'riata', 'taina', 
-    'taran', 'tarea', 'taren', 'tarín', 'teína', 'tenía', 'terna', 'tiara', 'tínea', 'tiran', 'tiren', 'traen', 'traía', 
-    'trena', 'trían', 'tríen', 'trina', 'triné', 'agre', 'gana', 'gané', 'gata', 'geta', 'gira', 'gire', 'gran', 'inga', 
-    'irga', 'nega', 'regí', 'rige', 'ring', 'aeta', 'aína', 'aíra', 'aire', 'anea', 'anta', 'aran', 'área', 'aren', 'aria', 
-    'arna', 'arte', 'atan', 'atar', 'atea', 'aten', 'eirá', 'enta', 'eran', 'ería', 'irán', 'nana', 'nata', 'nena', 'neta', 
-    'raen', 'raía', 'rain', 'rana', 'rata', 'reía', 'reta', 'rian', 'rien', 'rita', 'rite', 'tara', 'taré', 'tena', 'tina', 
-    'tira', 'tiré', 'trae', 'tren', 'tría', 'trie']
-
-    Word_list_CABALLITO = ['atabillo','baticola', 'caobilla', 'báltica', 'báltico', 'coitaba', 'acolita', 'alicato', 'argentan', 'altaico',
-    'bacillo', 'batallo', 'botilla', 'caballo', 'cabilla', 'cabillo', 'cotilla', 'otilaba', 'tabilla', 'tillaba', 'toballa', 
-    'alcoba', 'abolla', 'acallo', 'acolla', 'albalo', 'albita', 'atablo', 'atolla', 'callao', 'lloica', 'toalla',
-    'bacilo', 'biloca', 'bocata', 'botica', 'cabalo', 'cabila', 'cálibo', 'citaba', 'colaba', 'cotaba', 'ociaba', 'tabaco', 
-    'tabica', 'tabico', 'tocaba', 'abatió', 'abolía', 'alacio', 'albita', 'álcali', 'atablo', 'balita', 'balito', 'balota', 
-    'batial', 'batola', 'bolita', 'calato', 'coaita', 'coital', 'colita', 'cotila', 'labial', 'laical', 'litaba', 'locata', 
-    'oblata', 'tablao', 'ábaco', 'aboca', 'acabo', 'acabó', 'bacía', 'bical', 'bloca', 'bocal', 'cabal', 'cabía', 'cabió', 'caoba', 
-    'ciaba', 'cibal', 'cobil', 'cobla', 'abatí', 'abato', 'abita', 'abito', 'abolí', 'acato', 'acial', 'acilo', 'acola', 
-    'acota', 'alabo', 'álica', 'aloca', 'atacó', 'atiba', 'atibó', 'ática', 'ático', 'atoba', 'baila', 'bailo', 'balta', 
-    'balto', 'batía', 'batió', 'bilao', 'biota', 'cálao', 'calta', 'ciato', 'clota', 'coita', 'coatí', 'labia', 'lábil', 
-    'labio', 'lacia', 'lacio', 'lacta', 'lacto', 'laica', 'laico', 'liaba', 'loaba', 'local', 'loica', 'tabal', 'tabla', 
-    'talco', 'tiaca', 'tlaco', 'toaba', 'tocia', 'alola', 'alota', 'ilota', 'latía', 'latió', 'lilao', 'otila', 'talio', 'tolla','baca', 
-    'bloc', 'boca', 'cabo', 'cibo', 'coba', 'acal', 'acta', 'acto', 'alba', 'albo', 'alca', 'bala', 'balo', 'bata', 'batí', 'bato', 
-    'bita', 'bito', 'bola', 'bota', 'caía', 'cala', 'calo', 'cata', 'cato', 'cita', 'cito', 'cola', 'cota', 'cotí', 'laca', 'laco', 
-    'liba', 'libo', 'loba', 'loca', 'ocal', 'ocia', 'taba', 'tabí', 'tabo', 'taca', 'taco', 'tico', 'toba', 'toca', 'alía', 'alío', 
-    'alta', 'alto', 'atoa', 'atol', 'iota', 'lata', 'latí', 'lato', 'lila', 'lita', 'lito', 'lota', 'olía', 'tala', 'talo', 'taló', 
-    'tilo', 'tila', 'tola']
+    'rentan', 'retina', 'tarina', 'tenían', 'tierna', 'tirana', 'traían', 'trinan', 'trinen', 'agita', 'agite', 'agria', 'agríe', 
+    'anega', 'angra', 'argán', 'argén', 'gaita', 'ganan', 'ganar', 'ganen', 'ganta', 'gante', 'gatea', 'ginea', 'giren', 'giran', 
+    'grana', 'grané', 'grata', 'graté', 'grita', 'grité', 'ígnea', 'irgan', 'negar', 'negra', 'niega', 'raiga', 'regia', 'renga', 
+    'riega', 'rigen', 'ringa', 'taiga', 'tanga', 'tange', 'tangí', 'tenga', 'tigre', 'tinge', 'traga', 'airan', 'airea', 'airen', 
+    'anear', 'arena', 'ataré', 'atear', 'aterí', 'atina', 'atiné', 'atrae', 'enana', 'enría', 'entra', 'erina', 'étnia', 'inane', 
+    'itera', 'naire', 'nanea', 'nanta', 'natía', 'natri', 'nenia', 'niara', 'nieta', 'nitra', 'nitré', 'raían', 'ratea', 'reata', 
+    'reían', 'reina', 'renta', 'retan', 'retín', 'riata', 'taina', 'taran', 'tarea', 'taren', 'tarín', 'teína', 'tenía', 'terna', 
+    'tiara', 'tínea', 'tiran', 'tiren', 'traen', 'traía', 'trena', 'trían', 'tríen', 'trina', 'triné', 'agre', 'gana', 'gane', 'gané', 
+    'gata', 'geta', 'gira', 'gire', 'giré' 'gran', 'inga', 'irga', 'nega', 'regí', 'rige', 'ring', 'aeta', 'aína', 'aíra', 'aire', 
+    'anea', 'anta', 'aran', 'área', 'aren', 'aria', 'arna', 'arte', 'atan', 'atar', 'atea', 'aten', 'eirá', 'enta', 'eran', 'ería', 
+    'irán', 'nana', 'nata', 'nena', 'neta', 'raen', 'raía', 'rain', 'rana', 'rata', 'reía', 'reta', 'rían', 'ríen', 'rita', 'rite', 
+    'tara', 'taré', 'tena', 'tina', 'tira', 'tiré', 'tire''trae', 'tren', 'tría', 'trie', 'tríe']
+    
+    Word_list_CABALLITO = ['baticola', 'báltica', 'báltico', 'coitaba', 'acolita', 'alicato', 'argentan', 'altaico', 
+    'alcoba', 'bacilo', 'biloca', 'bocata', 'botica', 'cabalo', 'cabila', 'cálibo', 'citaba', 'colaba', 'cotaba', 
+    'ociaba', 'tabaco', 'tabica', 'tabico', 'tocaba', 'abatió', 'abolía', 'alacio', 'albita', 'álcali', 'atablo', 
+    'balita', 'balito', 'balota', 'batial', 'batola', 'bolita', 'calato', 'coaita', 'coital', 'colita', 'cotila', 
+    'labial', 'laical', 'litaba', 'locata', 'oblata', 'tablao', 'ábaco', 'aboca', 'acabo', 'bacía', 'bical', 
+    'bloca', 'bocal', 'cabal', 'cabía', 'cabió', 'caoba', 'ciaba', 'cibal', 'cobil', 'cobla', 'abatí', 'abato', 
+    'abita', 'abito', 'abolí', 'acato', 'acial', 'acilo', 'acola', 'acota', 'alabo', 'álica', 'aloca', 'atacó', 
+    'ataco', 'atiba', 'atibó', 'atibo', 'ática', 'ático', 'atoba', 'baila', 'bailo', 'bailó', 'balta', 'balto', 
+    'batía', 'batió', 'bilao', 'biota', 'cálao', 'calta', 'ciato', 'clota', 'coita', 'coatí', 'labia', 'lábil', 
+    'labio', 'lacia', 'lacio', 'lació', 'lacta', 'lacto', 'lactó', 'laica', 'laico', 'liaba', 'loaba', 'local', 
+    'loica', 'tabal', 'tabla', 'tablo', 'tabló', 'talco', 'tiaca', 'tlaco', 'toaba', 'tocia', 'tocía', 'alola', 
+    'alota', 'ilota', 'latía', 'latió', 'lilao', 'otila', 'talio', 'baca', 'bloc', 'boca', 'cabo', 'cibo', 'coba', 
+    'acal', 'acta', 'acto', 'alba', 'albo', 'alca', 'bala', 'balo', 'bata', 'batí', 'bato', 'bita', 'bito', 'bola', 
+    'bota', 'caía', 'cala', 'calo', 'caló', 'cata', 'cato', 'cató', 'cita', 'cito', 'citó', 'cola', 'cota', 'cotí', 
+    'laca', 'laco', 'liba', 'libo', 'loba', 'loca', 'ocal', 'ocia', 'taba', 'tabí', 'tabo', 'taca', 'taco', 'tico', 
+    'toba', 'toca', 'alía', 'alío', 'alió', 'alta', 'alto', 'atoa', 'atol', 'iota', 'lata', 'latí', 'lato', 'lila', 
+    'lita', 'lito', 'lota', 'olía', 'tala', 'talo', 'taló', 'tilo', 'tola', 'caobilla', 'atabillo', 'atabilló', 'bacillo', 
+    'ballico', 'caballo', 'cabilla', 'cabillo', 'batallo', 'batalló', 'botilla', 'cotilla', 'tabilla', 'tillaba', 
+    'toballa', 'aballo', 'aballó', 'abolla', 'acallo', 'acalló', 'acolla', 'callao', 'coalla', 'llicta', 'lloica', 'atolla', 
+    'toalla', 'aclla', 'billa', 'bolla', 'calla', 'callo', 'calló', 'cilla', 'colla', 'llaca', 'aíllo', 'talla', 'tallo', 
+    'talló', 'tilla', 'tillo', 'tilló', 'tolla', 'allá', 'allí', 'olla']
 
     Word_list_CASCABELES = ['cableases', 'cabeceas', 'cascabel', 'ceceabas', 'balacees', 'cablease', 'caseases', 'calacees', 
     'calcases', 'calceses', 'sebáceas', 'albeases', 'baleases', 'balsease', 'escalase', 'laceases', 'leseabas', 'sablease', 
     'cabecea', 'ceceaba', 'balacee', 'becases', 'cabales', 'cabases', 'cableas', 'cablees', 'cacease', 'calaceé', 'calcase', 
-    'casabes', 'cascace', 'cebases', 'cacales', 'celabas', 'cesabas', 'escabel', 'sebácea', 'secabas', 'abalees', 'alabees', 
+    'casabes', 'cascase', 'cebases', 'cacales', 'celabas', 'cesabas', 'escabel', 'sebácea', 'secabas', 'abalees', 'alabees', 
     'albease', 'balases', 'balease', 'balseas', 'balsees', 'basales', 'belesas', 'calases', 'caleses', 'casales', 'celases', 
     'escalas', 'escales', 'escasea', 'lacases', 'lacease', 'lascase', 'leseaba', 'sabelas', 'sableas', 'sablees', 'salaces', 
     'seseaba', 'aleases', 'aselase', 'salease', 'acabes', 'acaece', 'acebal', 'aceces', 'bascas', 'becase', 'cabale', 'cablea', 
-    'cableé', 'cables', 'caceas', 'cacees', 'cacles', 'calcas', 'calces', 'casabe', 'cascas', 'cebase', 'ceceas', 'celaba', 
-    'cesaba', 'secaba', 'abaleé', 'alabeé', 'alabes', 'albeas', 'albees', 'alceas', 'aleces', 'asaces', 'balase', 'baleas', 
-    'balees', 'balsas', 'balsea', 'balseé', 'basase', 'belesa', 'besase', 'calase', 'calesa', 'casase', 'caseas', 'celase', 'cesase', 
-    'clases', 'escala', 'escale', 'escasa', 'lacase', 'laceas', 'lacees', 'lascas', 'sabeas', 'sabela', 'sablea', 'sableé', 'sables', 
-    'sacase', 'salces', 'secase', 'alease', 'asease', 'aselas', 'aseles', 'leseas', 'salase', 'saleas', 'salees', 'salesa', 'salsea', 
-    'salseé', 'abecé', 'acabé', 'acece', 'bacas', 'basca', 'becas', 'cabal', 'cabas', 'cabes', 'cable', 'cacas', 'cacea', 'caceé', 
-    'caces', 'cacle', 'calca', 'calce', 'casca', 'cebas', 'cebes', 'cecal', 'cecas', 'cecea', 'abalé', 'acles', 'alabé', 'albas', 
-    'albea', 'albeé', 'alcas', 'alcea', 'alces', 'alece', 'ascas', 'balas', 'balea', 'baleé', 'bales', 'balsa', 'basal', 'basas', 
-    'bases', 'beles', 'besas', 'beses', 'calas', 'cales', 'casal', 'casas', 'cásea', 'cases', 'celas', 'celes', 'cesas', 'ceses', 
-    'clase', 'lacas', 'lacea', 'laceé', 'laces', 'lasca', 'sabea', 'sabes', 'sable', 'sacas', 'sebes', 'aleas', 'alees', 'asase', 
-    'aseas', 'asees', 'asela', 'aselé', 'asesa', 'asesé', 'lasas', 'lesas', 'lesea', 'salas', 'salea', 'saleé', 'sales', 'salsa', 
+    'cableé', 'cablee', 'cables', 'caceas', 'cacees', 'cacles', 'calcas', 'calces', 'casabe', 'cascas', 'cebase', 'ceceas', 
+    'celaba', 'cesaba', 'secaba', 'abaleé', 'alabeé', 'alabes', 'alabé', 'alabe', 'albeas', 'albees', 'alceas', 'aleces', 'asaces', 
+    'balase', 'baleas', 'balees', 'balsas', 'balsea', 'balsee', 'balseé', 'basase', 'belesa', 'besase', 'calase', 'calesa', 'casase', 
+    'caseas', 'celase', 'cesase', 'clases', 'escala', 'escale', 'escalé', 'escasa', 'lacase', 'laceas', 'lacees', 'lascas', 'sabeas', 
+    'sabela', 'sablea', 'sableé', 'sablee', 'sables', 'sacase', 'salces', 'secase', 'alease', 'asease', 'aselas', 'aseles', 'leseas', 
+    'salase', 'saleas', 'salees', 'salesa', 'salsea', 'salseé', 'abecé', 'acabé', 'acece', 'bacas', 'basca', 'becas', 'cabal', 'cabas', 
+    'cabes', 'cable', 'cacas', 'cacea', 'caceé', 'caces', 'cacle', 'calca', 'calce', 'casca', 'cebas', 'cebes', 'cecal', 'cecas', 'cecea', 
+    'abalé', 'acles', 'alabé', 'albas', 'albea', 'albeé', 'alcas', 'alcea', 'alces', 'alece', 'ascas', 'balas', 'balea', 'baleé', 'bales', 
+    'balsa', 'basal', 'basas', 'bases', 'beles', 'besas', 'beses', 'calas', 'cales', 'casal', 'casas', 'cásea', 'cases', 'celas', 'celes', 
+    'cesas', 'ceses', 'clase', 'lacas', 'lacea', 'laceé', 'laces', 'lasca', 'sabea', 'sabes', 'sable', 'sacas', 'sebes', 'aleas', 'alees', 
+    'asase', 'aseas', 'asees', 'asela', 'aselé', 'asesa', 'asesé', 'lasas', 'lesas', 'lesea', 'salas', 'salea', 'saleé', 'sales', 'salsa', 
     'sasal', 'seles', 'sesea', 'baca', 'beca', 'cabe', 'caca', 'cacé', 'ceba', 'cebe', 'ceca', 'acal', 'acle', 'alba', 'alca', 'alce', 
-    'asca', 'bala', 'balé', 'basa', 'base', 'besa', 'besé', 'caes', 'cala', 'calé', 'casa', 'casé', 'ceas', 'cela', 'celé', 'cesa', 
-    'cese', 'esca', 'labe', 'laca', 'lacé', 'sabe', 'saca', 'sebe', 'seca', 'alas', 'alea', 'aleé', 'asas', 'asea', 'ases', 'eles', 
-    'esas', 'eses', 'lasa', 'leas', 'lees', 'lesa', 'sala', 'sale']
+    'asca', 'bala', 'balé', 'basa', 'base', 'besa', 'besé', 'caes', 'cala', 'calé', 'casa', 'casé', 'ceas', 'cela', 'celé', 'cesa', 'cese', 
+    'esca', 'labe', 'laca', 'lacé', 'sabe', 'saca', 'sebe', 'seca', 'alas', 'alea', 'aleé', 'alee', 'asas', 'asea', 'ases', 'eles', 'esas', 
+    'eses', 'lasa', 'leas', 'lees', 'lesa', 'sala', 'sale', 'salé']
 
-    Word_list_HOLOCAUSTO = ['actuoso', 'costalo', 'cultosa', 'cultoso', 'locatos', 'locutas', 'ocotosa', 'ocultas', 'ocultos', 
-    'talcoso', 'holcos', 'huacos', 'hostal', 'acostó', 'acuoso', 'asulcó', 'caloso', 'castúo', 'cautos', 'clotas', 'coloso', 'costal', 
-    'cotúas', 'cultas', 'cultos', 'cuotas', 'locato', 'locuta', 'locuto', 'ocluso', 'ocotal', 'oculta', 'oculto', 'ósculo', 'socola', 
-    'socoló', 'talcos', 'tlacos', 'tuscal', 'latoso', 'lautos', 'lutosa', 'lutoso', 'soluto', 'holco', 'hosca', 'hosco', 'huaco', 'ahúso', 
-    'halos', 'hatos', 'hotos', 'huaos', 'hulas', 'hutas', 'acoló', 'acoso', 'acotó', 'actos', 'actúo', 'aculo', 'acusó', 'acuto', 'alocó', 
-    'catos', 'causo', 'cauto', 'clota', 'colas', 'costa', 'costó', 'cotas', 'cotos', 'cotúa', 'culos', 'culta', 'culto', 'cuota', 'cutas', 
-    'cutos', 'lactó', 'lascó', 'locas', 'locos', 'lucas', 'lusco', 'lusca', 'ocaso', 'sauco', 'socol', 'sulco', 'tacos', 'talco', 'tasco', 
-    'taucó', 'tlaco', 'tocas', 'tocos', 'tosco', 'tosca', 'tusca', 'tusco', 'alotó', 'altos', 'asoló', 'atusó', 'ausol', 'autos', 'lasto', 
-    'latos', 'lauto', 'lotos', 'lutos', 'salto', 'soltá', 'soltó', 'sotol', 'suato', 'talos', 'tolas', 'halo', 'hato', 'hola', 'hoto', 
-    'huao', 'hula', 'huló', 'huso', 'huta', 'acto', 'asco', 'caló', 'caos', 'caso', 'cató', 'coas', 'cola', 'coló', 'cosa', 'coso', 'cota', 
-    'coto', 'cuál', 'culo', 'cusa', 'cusó', 'cuto', 'cuta', 'lacó', 'loca', 'loco', 'luca', 'luco', 'ocal', 'ocas', 'osca', 'osco', 'saco', 
-    'soca', 'suco', 'taco', 'toca', 'tocó', 'tuca', 'tuco', 'alto', 'atol', 'atoó', 'auto', 'laso', 'lato', 'loas', 'losa', 'losó', 'lota', 
-    'loto', 'lúas', 'luso', 'lusa', 'luto', 'olas', 'osta', 'otos', 'saló', 'sato', 'sola', 'solo', 'sota', 'soto', 'sula', 'taló', 'talo', 
-    'taos', 'tasó', 'toas', 'tola', 'tosa', 'toso', 'tusa', 'tuso']
+    Word_list_HOLOCAUSTO = ['actuoso', 'costalo', 'cultosa', 'cultoso', 'locatos', 'locutas', 'ocotosa', 'ocultas', 'ocultos', 'talcoso', 
+    'holcos', 'huacos', 'hostal', 'acostó', 'acuoso', 'asulcó', 'caloso', 'castúo', 'cautos', 'clotas', 'coloso', 'costal', 'cotúas', 
+    'cultas', 'cultos', 'cuotas', 'locato', 'locuta', 'locuto', 'ocluso', 'ocotal', 'oculta', 'oculto', 'ósculo', 'socola', 'socoló', 
+    'talcos', 'tlacos', 'tuscal', 'latoso', 'lautos', 'lutosa', 'lutoso', 'soluto', 'holco', 'hosca', 'hosco', 'huaco', 'ahúso', 'halos', 
+    'hatos', 'hotos', 'huaos', 'hulas', 'hutas', 'acoló', 'acoso', 'acotó', 'actos', 'actúo', 'aculo', 'acusó', 'acuto', 'alocó', 'catos', 
+    'causo', 'cauto', 'clota', 'colas', 'costa', 'costó', 'cotas', 'cotos', 'cotúa', 'culos', 'culta', 'culto', 'cuota', 'cutas', 'cutos', 
+    'lactó', 'lascó', 'locas', 'locos', 'lucas', 'lusco', 'lusca', 'ocaso', 'sauco', 'socol', 'sulco', 'tacos', 'talco', 'tasco', 'taucó', 
+    'tlaco', 'tocas', 'tocos', 'tosco', 'tosca', 'tusca', 'tusco', 'alotó', 'altos', 'asoló', 'atusó', 'atuso', 'ausol', 'autos', 'lasto', 
+    'latos', 'lauto', 'lotos', 'lutos', 'salto', 'soltá', 'soltó', 'sotol', 'suato', 'talos', 'tolas', 'halo', 'hato', 'hola', 'hoto', 'huao', 
+    'hula', 'huló', 'huso', 'huta', 'acto', 'asco', 'caló', 'caos', 'caso', 'cató', 'coas', 'cola', 'coló', 'colo', 'cosa', 'coso', 'cota', 
+    'coto', 'cuál', 'cual', 'culo', 'cusa', 'cuso', 'cuto', 'cuta', 'lacó', 'loca', 'loco', 'luca', 'luco', 'ocal', 'ocas', 'osca', 'osco', 
+    'saco', 'soca', 'suco', 'taco', 'toca', 'tocó', 'tuca', 'tuco', 'alto', 'atol', 'atoó', 'auto', 'laso', 'lato', 'loas', 'losa', 'losó', 
+    'lota', 'loto', 'lúas', 'luso', 'lusa', 'luto', 'olas', 'osta', 'otos', 'saló', 'sato', 'sola', 'solo', 'sota', 'soto', 'sula', 'taló', 
+    'talo', 'taos', 'tasó', 'taso', 'toas', 'tola', 'tosa', 'toso', 'tusa', 'tuso']
 
     Word_list_ELEFANTES = ['fleteasen', 'elefante', 'fletanes', 'fletasen', 'fletease', 'entelase', 'estafen', 'falseen', 'falsete', 'falseen', 
     'fenales', 'festean', 'festeen', 'fetales', 'fetenes', 'fletase', 'fletean', 'fleteas', 'fleteen', 'fletees', 'aleteen', 'aletees', 'anteles', 
-    'eneales', 'enlates', 'entelas', 'enteles', 'saeteen', 'salteen', 'éfetas', 'estafé', 'faenes', 'falseé', 'falsen', 'falten', 'faltes', 'flanes', 
-    'fletan', 'fletas', 'fletea', 'fleteé', 'fleten', 'fletes', 'alenté', 'aleteé', 'alteen', 'altees', 'antele', 'antelé', 'aselen', 'asente', 
-    'asenté', 'atenes', 'atesen', 'enaste', 'atesen', 'enlate', 'entela', 'entele', 'entesa', 'entese', 'estela', 'etneas', 'lasten', 'latees', 
-    'lateen', 'leneas', 'lentas', 'lentes', 'lesean', 'leseen', 'saeteé', 'saeten', 'saleen', 'salteé', 'salten', 'setena', 'setene', 'setené', 
-    'taeles', 'tesela', 'afeen', 'afees', 'alfen', 'alfes', 'éfeta', 'faene', 'falsé', 'falté', 'fanes', 'fenal', 'fetal', 'fetas', 'fetén', 'fleta', 
-    'flete', 'aleen', 'alees', 'alteé', 'antes', 'aseen', 'asele', 'atese', 'eleta', 'eneal', 'eneas', 'entes', 'están', 'estén', 'etnea', 'lasté', 
-    'lateé', 'laten', 'lates', 'lenas', 'lenes', 'lenta', 'lente', 'lesea', 'lesee', 'leste', 'letea', 'neles', 'saete', 'salee', 'salen', 'salté', 
-    'saneé', 'satén', 'senté', 'setal', 'talen', 'tales', 'tasen', 'telas', 'tenas', 'tenés', 'tensa', 'tensé', 'tesan', 'tesen', 'tesla', 'afee', 
-    'álef', 'alfé', 'efes', 'fase', 'feas', 'feta', 'flan', 'aleé', 'aseé', 'asen', 'aten', 'ates', 'eles', 'enea', 'enes', 'enta', 'ente', 'esta', 
-    'este', 'etas', 'late', 'lean', 'leas', 'leen', 'lees', 'lena', 'lene', 'lesa', 'neas', 'neta', 'sale', 'sane', 'sean', 'sena', 'sete', 'seta', 
-    'tael', 'talé', 'tasé', 'teas', 'tela', 'telé', 'tena', 'tesa', 'tesé']
+    'eneales', 'enlates', 'entelas', 'enteles', 'saeteen', 'salteen', 'éfetas', 'estafé', 'estafe', 'faenes', 'falseé', 'falsee', 'falsen', 
+    'falten', 'faltes', 'flanes', 'fletan', 'fletas', 'fletea', 'fleteé', 'fletee', 'fleten', 'fletes', 'alenté', 'aleteé', 'estafé', 'aletee', 
+    'altees', 'antele', 'antelé', 'aselen', 'asente', 'asenté', 'atenes', 'atesen', 'enaste', 'atesen', 'enlate', 'entela', 'entele', 'entesa', 
+    'entese', 'estela', 'etneas', 'lasten', 'latees', 'lateen', 'leneas', 'lentas', 'lentes', 'lesean', 'leseen', 'saeteé', 'saetee', 'saeten', 
+    'saleen', 'salteé', 'salten', 'setena', 'setene', 'setené', 'taeles', 'tesela', 'afeen', 'afees', 'alfen', 'alfes', 'éfeta', 'faene', 'falsé', 
+    'falté', 'falte', 'fanes', 'fenal', 'fetal', 'fetas', 'fetén', 'fleta', 'flete', 'aleen', 'alees', 'alteé', 'altee', 'antes', 'aseen', 'asele', 
+    'atese', 'eleta', 'eneal', 'eneas', 'entes', 'están', 'estén', 'etnea', 'lasté', 'lateé', 'laten', 'lates', 'lenas', 'lenes', 'lenta', 'lente', 
+    'lesea', 'lesee', 'leste', 'letea', 'neles', 'saete', 'salee', 'salen', 'salté', 'salte', 'saneé', 'sanee', 'satén', 'senté', 'setal', 'talen', 
+    'tales', 'tasen', 'telas', 'tenas', 'tenés', 'tensa', 'tensé', 'tesan', 'tesen', 'tesla', 'afee', 'álef', 'alfé', 'efes', 'fase', 'feas', 'feta', 
+    'flan', 'aleé', 'alee', 'aseé', 'asee', 'asen', 'aten', 'ates', 'eles', 'enea', 'enes', 'enta', 'ente', 'esta', 'este', 'etas', 'late', 'lean', 
+    'leas', 'leen', 'lees', 'lena', 'lene', 'lesa', 'neas', 'neta', 'sale', 'sane', 'sean', 'sena', 'sete', 'seta', 'tael', 'talé', 'tale', 'tasé', 
+    'tase', 'teas', 'tela', 'telé', 'tele', 'tena', 'tesa', 'tesé', 'tese']
 
     Word_list_COBARDÍA = ['acribado', 'boricada', 'carábido', 'abdicar', 'acribad', 'bocarda', 'brocada', 'cribada', 'cribado', 'acibaró', 'acibaro', 
     'arábico', 'rociaba', 'acárido', 'arcadio', 'aricado', 'cariado', 'rabiado', 'rociada', 'abdica', 'abdicó', 'abocad', 'bocada', 'cabida', 'cabido', 
@@ -211,31 +217,31 @@ class Constants(BaseConstants):
     'adra', 'adro', 'arad', 'arda', 'ardí', 'ardo', 'dará', 'dirá', 'dora', 'dría', 'odia', 'oída', 'orad', 'rada', 'roda', 'aira', 'airo', 'aria', 'ario', 
     'oirá', 'raía', 'roía']
 
-    Word_list_MANDARINA = ['amadrinan', 'dimanarán', 'mandarian', 'amadrina', 'amrinad', 'dimanará', 'mandarán', 'mandaría', 'mandarín', 'marinada', 'amarinan', 
-    'aminaran', 'animarán', 'imanarán', 'manarían', 'andarían', 'andarina', 'anidaran', 'anidarán', 'arandina', 'nadarían', 'admiran', 'amainad', 'animada', 
-    'armadía', 'damiana', 'dimanan', 'dimanar', 'imanada', 'madrina', 'mandará', 'mandria', 'maridan', 'marinad', 'ramadán', 'amainan', 'amainar', 'amarían', 
-    'amarina', 'aminara', 'animará', 'animara', 'imanara', 'imanará', 'manaran', 'manarán', 'manaría', 'manirán', 'marinan', 'minaran', 'minarán', 'adiaran', 
-    'anadina', 'andarán', 'andaría', 'andarín', 'andrina', 'anidara', 'anidará', 'nadaran', 'nadarán', 'nadaría', 'nardina', 'adaman', 'adamar', 'admira', 
-    'amanad', 'amarad', 'aminad', 'animad', 'armada', 'dimana', 'imanad', 'manada', 'mandan', 'mandar', 'mandra', 'manida', 'marida', 'minada', 'mirada', 
-    'ramada', 'rimada', 'aimara', 'amaina', 'amanan', 'amanar', 'amaran', 'amaría', 'aminan', 'aminar', 'imanan', 'imanar', 'manará', 'manían', 'marina', 
-    'miarán', 'minará', 'ramina', 'adiana', 'adiará', 'airada', 'andana', 'andará', 'andina', 'anidan', 'anidar', 'ardían', 'arnadí', 'darían', 'nadara', 
-    'nadará', 'radían', 'rindan', 'narina', 'ranina', 'adama', 'amada', 'amida', 'armad', 'drama', 'imada', 'manad', 'manda', 'mandí', 'manid', 'minad', 
-    'mirad', 'rimad', 'amana', 'amará', 'anima', 'arman', 'imana', 'manan', 'manar', 'manía', 'manir', 'miara', 'miará', 'minan', 'minar', 'miran', 'riman', 
-    'adían', 'adiar', 'adran', 'airad', 'andan', 'andar', 'anida', 'arada', 'ardan', 'ardía', 'árida', 'darán', 'daría', 'dinar', 'dirán', 'irada', 'nadan', 
-    'nadar', 'nadir', 'radia', 'raída', 'randa', 'riada', 'rinda', 'airan', 'ananá', 'arana', 'niara', 'raían', 'amad', 'dama', 'miad', 'mida', 'aman', 'amar', 
-    'amia', 'amín', 'amir', 'arma', 'imán', 'maná', 'maní', 'mara', 'miar', 'mina', 'mira', 'rama', 'rima', 'adir', 'adra', 'anda', 'arad', 'arda', 'ardí', 'dará', 
-    'dirá', 'dría', 'inda', 'nada', 'nadi', 'rada', 'rand', 'aína', 'aira', 'aran', 'aria', 'arna', 'irán', 'nana', 'raía', 'rain', 'rana', 'rían']
+    Word_list_MANDARINA = ['amadrinan', 'dimanarán', 'mandarían', 'amadrina', 'amarinad', 'dimanará', 'mandarán', 'mandaría', 'mandarín', 'marinada', 'amarinan', 
+    'aminaran', 'animarán', 'imanarán', 'imanaran', 'manarían', 'andarían', 'andarina', 'anidaran', 'anidarán', 'arandina', 'nadarían', 'admiran', 'amainad', 
+    'animada', 'armadía', 'damiana', 'dimanan', 'dimanar', 'imanada', 'madrina', 'mandará', 'mandria', 'maridan', 'marinad', 'ramadán', 'amainan', 'amainar', 
+    'amarían', 'amarina', 'aminara', 'animará', 'animara', 'imanara', 'imanará', 'manaran', 'manarán', 'manaría', 'manirán', 'marinan', 'minaran', 'minarán', 
+    'adiaran', 'anadina', 'andarán', 'andaría', 'andarín', 'andrina', 'anidara', 'anidará', 'nadaran', 'nadarán', 'nadaría', 'nardina', 'adaman', 'adamar', 
+    'admira', 'amanad', 'amarad', 'aminad', 'animad', 'armada', 'dimana', 'imanad', 'manada', 'mandan', 'mandar', 'mandra', 'manida', 'marida', 'minada', 'mirada', 
+    'ramada', 'rimada', 'aimara', 'amaina', 'amanan', 'amanar', 'amaran', 'amaría', 'aminan', 'aminar', 'imanan', 'imanar', 'manará', 'manían', 'marina', 'miarán', 
+    'minará', 'ramina', 'adiana', 'adiará', 'airada', 'andana', 'andará', 'andina', 'anidan', 'anidar', 'ardían', 'arnadí', 'darían', 'nadara', 'nadará', 'radían', 
+    'rindan', 'narina', 'ranina', 'adama', 'amada', 'amida', 'armad', 'drama', 'imada', 'manad', 'manda', 'mandí', 'manid', 'minad', 'mirad', 'rimad', 'amana', 'amará', 
+    'amara', 'anima', 'arman', 'imana', 'manan', 'manar', 'manía', 'manir', 'miara', 'miará', 'miara', 'minan', 'minar', 'miran', 'riman', 'adían', 'adiar', 'adran', 
+    'airad', 'andan', 'andar', 'anida', 'arada', 'ardan', 'ardía', 'árida', 'darán', 'daría', 'dinar', 'dirán', 'irada', 'nadan', 'nadar', 'nadir', 'radia', 'radía',  
+    'raída', 'randa', 'riada', 'rinda', 'airan', 'ananá', 'arana', 'niara', 'raían', 'amad', 'dama', 'miad', 'mida', 'aman', 'amar', 'amia', 'amín', 'amir', 'arma', 
+    'imán', 'maná', 'maní', 'mara', 'miar', 'mina', 'mira', 'rama', 'rima', 'adir', 'adra', 'anda', 'arad', 'arda', 'ardí', 'dará', 'dirá', 'dría', 'inda', 'nada', 
+    'nadi', 'rada', 'rand', 'aína', 'aira', 'aran', 'aria', 'arna', 'irán', 'nana', 'raía', 'rain', 'rana', 'rían']
 
-    Word_list_TELEPATÍA = ['talepate', 'apetite', 'paletea', 'patalee', 'pataleé', 'petatea', 'pleitea', 'tepetal', 'apalee', 'apaleé', 'apeale', 'apealé', 
-    'atipla', 'atiplé', 'atiple', 'lapita', 'paleta', 'pateta', 'petate', 'pileta', 'platea', 'platee', 'plateé', 'pleita', 'tápate', 'tapete', 'tapial', 'aletea', 
-    'atleta', 'talete', 'teleta', 'apela', 'apele', 'apelé', 'apila', 'apile', 'apilé', 'apita', 'apite', 'apité', 'atipa', 'atipe', 'atipé', 'épale', 'epata', 
-    'epate', 'epaté', 'etapa', 'paila', 'palea', 'palee', 'paleé', 'palia', 'palie', 'palié', 'palta', 'patea', 'patee', 'pateé', 'peala', 'peale', 'pealé', 'pelea', 
-    'pelta', 'piala', 'piale', 'pialé', 'pital', 'pitea', 'pitee', 'piteé', 'plata', 'taipa', 'talpa', 'tapea', 'tapee', 'tapeé', 'tapia', 'tapie', 'tapié', 'tiple', 
-    'aleta', 'altea', 'altee', 'alteé', 'ateta', 'atete', 'ateté', 'elata', 'eleta', 'élite', 'ítala', 'latea', 'latee', 'lateé', 'latía', 'letea', 'taita', 'tálea', 
-    'titea', 'titee', 'titeé', 'apea', 'apeé', 'apta', 'lapa', 'lipa', 'pala', 'palé', 'pali', 'pata', 'paté', 'patí', 'peal', 'peía', 'pela', 'pelé', 'pele', 'peta', 
-    'pete', 'peté', 'pial', 'piel', 'pila', 'pile', 'pilé', 'pita', 'pite', 'pité', 'tapa', 'tapé', 'tape', 'tepe', 'tipa', 'aeta', 'alea', 'alee', 'aleé', 'alía', 
-    'alié', 'alíe', 'alta', 'atal', 'atea', 'lata', 'late', 'latí', 'leía', 'lita', 'lité', 'tael', 'tala', 'talé', 'tata', 'tate', 'tela', 'tele', 'teta', 'tete', 
-    'tila', 'tile', 'tita']
+    Word_list_TELEPATÍA =  ['talepate', 'apetite', 'paletea', 'patalee', 'pataleé', 'petatea', 'pleitea', 'tepetal', 'apalee', 'apaleé', 'apeale', 'apealé', 
+    'atipla', 'atiplé', 'atiple', 'lapita', 'paleta', 'pateta', 'petate', 'pileta', 'platea', 'platee', 'plateé', 'pleita', 'tápate', 'tapete', 'tapial', 
+    'aletea', 'atleta', 'talete', 'teleta', 'apela', 'apele', 'apelé', 'apila', 'apile', 'apilé', 'apita', 'apite', 'apité', 'atipa', 'atipe', 'atipé', 'épale', 
+    'epata', 'epate', 'epaté', 'etapa', 'paila', 'palea', 'palee', 'paleé', 'palia', 'palie', 'palié', 'palta', 'patea', 'patee', 'pateé', 'peala', 'peale', 
+    'pealé', 'pelea', 'pelta', 'piala', 'piale', 'pialé', 'pital', 'pitea', 'pitee', 'piteé', 'plata', 'taipa', 'talpa', 'tapea', 'tapee', 'tapeé', 'tapia', 
+    'tapie', 'tapié', 'tiple', 'aleta', 'altea', 'altee', 'alteé', 'ateta', 'atete', 'ateté', 'elata', 'eleta', 'élite', 'ítala', 'latea', 'latee', 'lateé', 
+    'latía', 'letea', 'taita', 'tálea', 'titea', 'titee', 'titeé', 'apea', 'apeé', 'apta', 'lapa', 'lipa', 'pala', 'palé', 'pali', 'pata', 'paté', 'patí', 'peal', 
+    'peía', 'pela', 'pelé', 'pele', 'peta', 'pete', 'peté', 'pial', 'piel', 'pila', 'pile', 'pilé', 'pita', 'pite', 'pité', 'tapa', 'tapé', 'tape', 'tepe', 
+    'tipa', 'aeta', 'alea', 'alee', 'aleé', 'alía', 'alié', 'alíe', 'alta', 'atal', 'atea', 'lata', 'late', 'latí', 'leía', 'lita', 'lité', 'tael', 'tala', 
+    'talé', 'tale', 'tata', 'tate', 'tela', 'tele', 'teta', 'tete', 'tila', 'tile', 'tita']
 
     Word_list_COMUNICACIÓN = ['incomunica', 'incomunico', 'incomunicó', 'amunicionó', 'amuniciono', 'comunican', 'concomían', 'miccionan', 'inoacción', 
     'municiona', 'municiono', 'municionó', 'cinámico', 'coacción', 'comunica', 'comunico', 'comunicó', 'concoman', 'concomía', 'micciona', 'micciono', 
@@ -704,6 +710,11 @@ class Player(BasePlayer):
     answer_28_p=models.StringField(blank=True)
     answer_29_p=models.StringField(blank=True)
     answer_30_p=models.StringField(blank=True)
+    answer_31_p=models.StringField(blank=True)
+    answer_32_p=models.StringField(blank=True)
+    answer_33_p=models.StringField(blank=True)
+    answer_34_p=models.StringField(blank=True)
+    answer_35_p=models.StringField(blank=True)
 
     total_score_p=models.IntegerField(initial=0)
 
@@ -712,7 +723,7 @@ class Player(BasePlayer):
         self.answer_7_p, self.answer_8_p, self.answer_9_p, self.answer_10_p, self.answer_11_p, self.answer_12_p, self.answer_13_p, 
         self.answer_14_p, self.answer_15_p, self.answer_16_p, self.answer_17_p, self.answer_18_p, self.answer_19_p, self.answer_20_p, 
         self.answer_21_p, self.answer_22_p, self.answer_23_p, self.answer_24_p, self.answer_25_p, self.answer_26_p, self.answer_27_p, 
-        self.answer_28_p, self.answer_29_p, self.answer_30_p] 
+        self.answer_28_p, self.answer_29_p, self.answer_30_p, self.answer_31_p, self.answer_32_p, self.answer_33_p, self.answer_34_p, self.answer_35_p] 
 
         respuestas=[]  
 
@@ -758,6 +769,11 @@ class Player(BasePlayer):
     answer_28_R1=models.StringField(blank=True)
     answer_29_R1=models.StringField(blank=True)
     answer_30_R1=models.StringField(blank=True)
+    answer_31_R1=models.StringField(blank=True)
+    answer_32_R1=models.StringField(blank=True)
+    answer_33_R1=models.StringField(blank=True)
+    answer_34_R1=models.StringField(blank=True)
+    answer_35_R1=models.StringField(blank=True)
 
     total_score_R1=models.IntegerField(initial=0)
 
@@ -770,7 +786,8 @@ class Player(BasePlayer):
         self.answer_12_R1, self.answer_13_R1, self.answer_14_R1, self.answer_15_R1, self.answer_16_R1, self.answer_17_R1, 
         self.answer_18_R1, self.answer_19_R1, self.answer_20_R1, self.answer_21_R1, self.answer_22_R1, self.answer_23_R1, 
         self.answer_24_R1, self.answer_25_R1, self.answer_26_R1, self.answer_27_R1, self.answer_28_R1, self.answer_29_R1, 
-        self.answer_30_R1]
+        self.answer_30_R1, self.answer_31_R1, self.answer_32_R1, self.answer_33_R1, self.answer_34_R1, 
+        self.answer_35_R1]
 
         respuestas=[]  
 
@@ -890,6 +907,11 @@ class Player(BasePlayer):
     answer_28_R2=models.StringField(blank=True)
     answer_29_R2=models.StringField(blank=True)
     answer_30_R2=models.StringField(blank=True)
+    answer_31_R2=models.StringField(blank=True)
+    answer_32_R2=models.StringField(blank=True)
+    answer_33_R2=models.StringField(blank=True)
+    answer_34_R2=models.StringField(blank=True)
+    answer_35_R2=models.StringField(blank=True)
 
     total_score_R2=models.IntegerField(initial=0)
 
@@ -902,7 +924,8 @@ class Player(BasePlayer):
         self.answer_12_R2, self.answer_13_R2, self.answer_14_R2, self.answer_15_R2, self.answer_16_R2, self.answer_17_R2, 
         self.answer_18_R2, self.answer_19_R2, self.answer_20_R2, self.answer_21_R2, self.answer_22_R2, self.answer_23_R2, 
         self.answer_24_R2, self.answer_25_R2, self.answer_26_R2, self.answer_27_R2, self.answer_28_R2, self.answer_29_R2, 
-        self.answer_30_R2]
+        self.answer_30_R2, self.answer_31_R2, self.answer_32_R2, self.answer_33_R2, self.answer_34_R2, 
+        self.answer_35_R2]
 
         respuestas=[]  
 
@@ -1021,6 +1044,11 @@ class Player(BasePlayer):
     answer_28_R3=models.StringField(blank=True)
     answer_29_R3=models.StringField(blank=True)
     answer_30_R3=models.StringField(blank=True)
+    answer_31_R3=models.StringField(blank=True)
+    answer_32_R3=models.StringField(blank=True)
+    answer_33_R3=models.StringField(blank=True)
+    answer_34_R3=models.StringField(blank=True)
+    answer_35_R3=models.StringField(blank=True)
 
     total_score_R3=models.IntegerField(initial=0)
 
@@ -1033,7 +1061,8 @@ class Player(BasePlayer):
         self.answer_12_R3, self.answer_13_R3, self.answer_14_R3, self.answer_15_R3, self.answer_16_R3, self.answer_17_R3, 
         self.answer_18_R3, self.answer_19_R3, self.answer_20_R3, self.answer_21_R3, self.answer_22_R3, self.answer_23_R3, 
         self.answer_24_R3, self.answer_25_R3, self.answer_26_R3, self.answer_27_R3, self.answer_28_R3, 
-        self.answer_29_R3, self.answer_30_R3]
+        self.answer_29_R3, self.answer_30_R3, self.answer_31_R3, self.answer_32_R3, self.answer_33_R3, 
+        self.answer_34_R3, self.answer_35_R3]
 
         respuestas=[]  
 
@@ -1152,6 +1181,11 @@ class Player(BasePlayer):
     answer_28_R4=models.StringField(blank=True)
     answer_29_R4=models.StringField(blank=True)
     answer_30_R4=models.StringField(blank=True)
+    answer_31_R4=models.StringField(blank=True)
+    answer_32_R4=models.StringField(blank=True)
+    answer_33_R4=models.StringField(blank=True)
+    answer_34_R4=models.StringField(blank=True)
+    answer_35_R4=models.StringField(blank=True)
 
     total_score_R4=models.IntegerField(initial=0)
 
@@ -1164,7 +1198,8 @@ class Player(BasePlayer):
         self.answer_12_R4, self.answer_13_R4, self.answer_14_R4, self.answer_15_R4, self.answer_16_R4, self.answer_17_R4, 
         self.answer_18_R4, self.answer_19_R4, self.answer_20_R4, self.answer_21_R4, self.answer_22_R4, self.answer_23_R4, 
         self.answer_24_R4, self.answer_25_R4, self.answer_26_R4, self.answer_27_R4, self.answer_28_R4, 
-        self.answer_29_R4, self.answer_30_R4]
+        self.answer_29_R4, self.answer_30_R4, self.answer_31_R4, self.answer_32_R4, self.answer_33_R4, 
+        self.answer_34_R4, self.answer_35_R4]
 
         respuestas=[]  
 
