@@ -718,7 +718,17 @@ class Player(BasePlayer):
 
     total_score_p=models.IntegerField(initial=0)
 
-    def puntaje_p(self): 
+    def puntaje_p(self):
+        #self.answer_1_p=self.answer_1_p.lower() 
+        #self.answer_2_p=self.answer_2_p.lower() 
+        #self.answer_3_p=self.answer_3_p.lower() 
+        #self.answer_4_p=self.answer_4_p.lower() 
+        #self.answer_5_p=self.answer_5_p.lower() 
+        #self.answer_6_p=self.answer_6_p.lower() 
+        #self.answer_7_p=self.answer_7_p.lower() 
+        #self.answer_8_p=self.answer_8_p.lower() 
+        #self.answer_9_p=self.answer_9_p.lower()
+        #self.answer_10_p=self.answer_10_p.lower()  
         rp = [self.answer_1_p, self.answer_2_p, self.answer_3_p, self.answer_4_p, self.answer_5_p, self.answer_6_p, 
         self.answer_7_p, self.answer_8_p, self.answer_9_p, self.answer_10_p, self.answer_11_p, self.answer_12_p, self.answer_13_p, 
         self.answer_14_p, self.answer_15_p, self.answer_16_p, self.answer_17_p, self.answer_18_p, self.answer_19_p, self.answer_20_p, 
