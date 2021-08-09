@@ -12,6 +12,9 @@ import time, random
 class Reglas_generales(Page):
     pass
 
+class Introduccion_labup(Page):
+    pass
+
 class Introduccion(Page):
     def vars_for_template(self):       
         return dict(a=self.participant.label)
