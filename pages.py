@@ -12,7 +12,7 @@ import time, random
 class Reglas_generales(Page):
     pass
 
-class Introduccion_labup(Page):
+class Introduccion_e2lab(Page):
     pass
 
 class Introduccion(Page):
@@ -279,6 +279,7 @@ class Cambio_app(Page):
 
 page_sequence = [
     #MyPage,
+    Introduccion_e2lab,
     Reglas_generales,
     Introduccion,
     Instrucciones_verbal,
