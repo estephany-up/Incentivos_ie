@@ -718,17 +718,7 @@ class Player(BasePlayer):
 
     total_score_p=models.IntegerField(initial=0)
 
-    def puntaje_p(self):
-        #self.answer_1_p=self.answer_1_p.lower() 
-        #self.answer_2_p=self.answer_2_p.lower() 
-        #self.answer_3_p=self.answer_3_p.lower() 
-        #self.answer_4_p=self.answer_4_p.lower() 
-        #self.answer_5_p=self.answer_5_p.lower() 
-        #self.answer_6_p=self.answer_6_p.lower() 
-        #self.answer_7_p=self.answer_7_p.lower() 
-        #self.answer_8_p=self.answer_8_p.lower() 
-        #self.answer_9_p=self.answer_9_p.lower()
-        #self.answer_10_p=self.answer_10_p.lower()  
+    def puntaje_p(self): 
         rp = [self.answer_1_p, self.answer_2_p, self.answer_3_p, self.answer_4_p, self.answer_5_p, self.answer_6_p, 
         self.answer_7_p, self.answer_8_p, self.answer_9_p, self.answer_10_p, self.answer_11_p, self.answer_12_p, self.answer_13_p, 
         self.answer_14_p, self.answer_15_p, self.answer_16_p, self.answer_17_p, self.answer_18_p, self.answer_19_p, self.answer_20_p, 
@@ -738,8 +728,10 @@ class Player(BasePlayer):
         respuestas=[]  
 
         for i in rp:
-            if i not in respuestas:
-                respuestas.append(i)
+            if i != None:
+                i=i.lower()
+                if i not in respuestas:
+                    respuestas.append(i)
            
         for x in respuestas:
             if x in Constants.Word_list_ALEATORIO:
@@ -802,8 +794,10 @@ class Player(BasePlayer):
         respuestas=[]  
 
         for i in rp:
-            if i not in respuestas:
-                respuestas.append(i)
+            if i != None:
+                i=i.lower()
+                if i not in respuestas:
+                    respuestas.append(i)
 
         if self.subsession.mariposa_1 == 'ARGENTINA':
             for x in respuestas:
@@ -940,8 +934,10 @@ class Player(BasePlayer):
         respuestas=[]  
 
         for i in rp:
-            if i not in respuestas:
-                respuestas.append(i)
+            if i != None:
+                i=i.lower()
+                if i not in respuestas:
+                    respuestas.append(i)
 
         if self.subsession.mariposa_2 == 'ARGENTINA':
             for x in respuestas:
@@ -1077,8 +1073,10 @@ class Player(BasePlayer):
         respuestas=[]  
 
         for i in rp:
-            if i not in respuestas:
-                respuestas.append(i)
+            if i != None:
+                i=i.lower()
+                if i not in respuestas:
+                    respuestas.append(i)
 
         if self.subsession.mariposa_3 == 'ARGENTINA':
             for x in respuestas:
@@ -1214,8 +1212,10 @@ class Player(BasePlayer):
         respuestas=[]  
 
         for i in rp:
-            if i not in respuestas:
-                respuestas.append(i)
+            if i != None:
+                i=i.lower()
+                if i not in respuestas:
+                    respuestas.append(i)
 
         if self.subsession.mariposa_4 == 'ARGENTINA':
             for x in respuestas:
