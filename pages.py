@@ -13,9 +13,8 @@ class Reglas_generales(Page):
     pass
 
 class Introduccion(Page):
-    def vars_for_template(self):
-        code=self.player.id_code()       
-        return dict(a=code)
+    def vars_for_template(self):       
+        return dict(a=self.participant.label)
 
 class Instrucciones_verbal(Page):
     def before_next_page(self):
@@ -287,17 +286,17 @@ page_sequence = [
     Wait_1,
     Ranking_verbal_R1,
     pay_1,
-    #Tarea_verbal_R2,
-    #Wait_2,
-    #Ranking_verbal_R2,
-    #pay_2,
-    #Tarea_verbal_R3,
-    #Wait_3,
-    #Ranking_verbal_R3,
-    #pay_3,
-    #Tarea_verbal_R4,
-    #Wait_4,
-    #Ranking_verbal_R4,
-    #pay_4, 
+    Tarea_verbal_R2,
+    Wait_2,
+    Ranking_verbal_R2,
+    pay_2,
+    Tarea_verbal_R3,
+    Wait_3,
+    Ranking_verbal_R3,
+    pay_3,
+    Tarea_verbal_R4,
+    Wait_4,
+    Ranking_verbal_R4,
+    pay_4, 
     Cambio_app,
 ]
